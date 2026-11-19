@@ -1,7 +1,25 @@
 (function () {
+  function ensureTopNavAlwaysVisible(desktopNav) {
+    const allTopItems = desktopNav.querySelectorAll(":scope > a, :scope > div, :scope > button");
+    allTopItems.forEach((el) => {
+      el.classList.remove("hidden", "invisible", "opacity-0");
+      el.style.visibility = "visible";
+      el.style.opacity = "1";
+    });
+
+    const directLinks = desktopNav.querySelectorAll(":scope > a, :scope > div > a, :scope > div > button");
+    directLinks.forEach((ctrl) => {
+      ctrl.classList.remove("hidden", "invisible", "opacity-0");
+      ctrl.style.visibility = "visible";
+      ctrl.style.opacity = "1";
+    });
+  }
+
   function initMegaMenus() {
     const desktopNav = document.querySelector('header nav[aria-label="Main navigation"]');
     if (!desktopNav) return;
+
+    ensureTopNavAlwaysVisible(desktopNav);
 
     const candidateWrappers = Array.from(desktopNav.querySelectorAll(":scope > div"));
     const items = candidateWrappers
@@ -16,6 +34,11 @@
           );
 
         if (!panel) return null;
+
+        // Ensure smooth CSS transition on panel
+        if (!panel.style.transition) {
+          panel.style.transition = "opacity 160ms ease, transform 160ms ease, visibility 160ms ease";
+        }
 
         return {
           trigger,
@@ -37,21 +60,37 @@
       }
     }
 
+    function keepTopItemVisible(entry) {
+      entry.wrapper.classList.remove("hidden", "invisible", "opacity-0");
+      entry.wrapper.style.visibility = "visible";
+      entry.wrapper.style.opacity = "1";
+
+      entry.trigger.classList.remove("hidden", "invisible", "opacity-0");
+      entry.trigger.style.visibility = "visible";
+      entry.trigger.style.opacity = "1";
+    }
+
     function showPanel(entry) {
       clearTimer(entry);
-      // Ensure the top-level wrapper and trigger remain visible at all times
-      entry.wrapper.classList.remove("hidden", "invisible", "opacity-0");
-      entry.trigger.classList.remove("hidden", "invisible", "opacity-0");
+      keepTopItemVisible(entry);
 
       entry.panel.classList.remove("hidden", "invisible", "opacity-0", "translate-y-2");
       entry.panel.classList.add("visible", "opacity-100", "translate-y-0");
+      entry.panel.style.visibility = "visible";
+      entry.panel.style.opacity = "1";
+      entry.panel.style.pointerEvents = "auto";
       entry.trigger.setAttribute("aria-expanded", "true");
     }
 
     function hidePanel(entry) {
       clearTimer(entry);
+      keepTopItemVisible(entry);
+
       entry.panel.classList.remove("visible", "opacity-100", "translate-y-0");
       entry.panel.classList.add("invisible", "opacity-0", "translate-y-2");
+      entry.panel.style.opacity = "0";
+      entry.panel.style.visibility = "hidden";
+      entry.panel.style.pointerEvents = "none";
       entry.trigger.setAttribute("aria-expanded", "false");
     }
 
@@ -82,11 +121,20 @@
         clearTimer(entry);
         entry.closeTimer = window.setTimeout(function () {
           hidePanel(entry);
-        }, 120);
+        }, 140);
       });
 
       entry.panel.addEventListener("mouseenter", function () {
         clearTimer(entry);
+        showPanel(entry);
+      });
+
+      entry.panel.addEventListener("mouseleave", function () {
+        if (pinnedWrapper === entry.wrapper) return;
+        clearTimer(entry);
+        entry.closeTimer = window.setTimeout(function () {
+          hidePanel(entry);
+        }, 140);
       });
 
       entry.wrapper.addEventListener("focusin", function () {
@@ -102,7 +150,7 @@
             if (!entry.wrapper.contains(document.activeElement)) {
               hidePanel(entry);
             }
-          }, 80);
+          }, 100);
         }
       });
 
