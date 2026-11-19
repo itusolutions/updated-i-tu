@@ -1,86 +1,84 @@
 /* ==========================================================================
    iTu Solutions - Animations Stylesheet (/assets/css/animations.css)
-   Complements Tailwind CSS v4, Animate.css, and AOS.
+   Deployment base: https://itusolutions.github.io/updated-i-tu/
    ========================================================================== */
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer utilities {
+  /* Gentle floating motion for hero & service illustrations */
+  .animate-float-slow {
+    animation: itu-float-slow 6s ease-in-out infinite;
+  }
+
+  /* Subtle pulse glow for status badges and primary highlights */
+  .animate-pulse-soft {
+    animation: itu-pulse-soft 2.8s ease-in-out infinite;
+  }
+
+  /* Smooth entrance helper for custom reveal states */
+  .animate-fade-up-fast {
+    animation: itu-fade-up-fast 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+}
+
 @layer components {
-  /* Subtle floating motion for hero & service SVG illustrations */
-  .anim-float {
-    animation: ituFloat 4.5s ease-in-out infinite;
+  /* Keep AOS & Animate.css sections visible even if JS delays or is disabled */
+  [data-aos] {
+    transition-property: transform, opacity;
   }
 
-  .anim-float-slow {
-    animation: ituFloat 7s ease-in-out infinite;
+  /* Dark-mode safe subtle border/shadow highlight on interactive cards */
+  .itu-card-hover {
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
   }
 
-  /* Gentle pulse glow for status badges & callouts */
-  .anim-pulse-soft {
-    animation: ituPulseSoft 2.6s ease-in-out infinite;
+  .itu-card-hover:hover {
+    transform: translateY(-2px);
   }
 
-  /* Smooth entrance helpers */
-  .anim-fade-up {
-    animation: ituFadeUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+  .dark .itu-card-hover:hover {
+    box-shadow: 0 12px 28px -12px rgba(37, 99, 235, 0.28);
   }
-
-  .anim-fade-in {
-    animation: ituFadeIn 0.45s ease-out both;
-  }
-
-  /* Stagger delays for card grids */
-  .anim-delay-100 { animation-delay: 100ms; }
-  .anim-delay-200 { animation-delay: 200ms; }
-  .anim-delay-300 { animation-delay: 300ms; }
-  .anim-delay-400 { animation-delay: 400ms; }
 }
 
-@keyframes ituFloat {
+@keyframes itu-float-slow {
   0%, 100% {
-    transform: translate3d(0, 0, 0);
+    transform: translateY(0px);
   }
   50% {
-    transform: translate3d(0, -8px, 0);
+    transform: translateY(-8px);
   }
 }
 
-@keyframes ituPulseSoft {
+@keyframes itu-pulse-soft {
   0%, 100% {
     opacity: 1;
-    transform: scale(1);
   }
   50% {
-    opacity: 0.78;
-    transform: scale(0.985);
+    opacity: 0.72;
   }
 }
 
-@keyframes ituFadeUp {
+@keyframes itu-fade-up-fast {
   from {
     opacity: 0;
-    transform: translate3d(0, 14px, 0);
+    transform: translateY(12px);
   }
   to {
     opacity: 1;
-    transform: translate3d(0, 0, 0);
+    transform: translateY(0);
   }
 }
 
-@keyframes ituFadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-/* Respect reduced motion preferences */
-@media (prefers-reduced-motion: reduce) {
-  .anim-float,
-  .anim-float-slow,
-  .anim-pulse-soft,
-  .anim-fade-up,
-  .anim-fade-in {
+/* Respect reduced-motion user settings & print output */
+@media (prefers-reduced-motion: reduce), print {
+  .animate-float-slow,
+  .animate-pulse-soft,
+  .animate-fade-up-fast,
+  .itu-card-hover {
     animation: none !important;
+    transition: none !important;
+    transform: none !important;
   }
 }
