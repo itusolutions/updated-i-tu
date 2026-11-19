@@ -224,18 +224,33 @@
           <span class="block text-xs text-slate-500 dark:text-slate-400">IT Support &amp; Digital Services</span>
         </span>
       </a>
+      
+<div class="group relative inline-flex items-center">
+  <button
+    type="button"
+    data-theme-toggle
+    data-theme-state="system"
+    class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-700 transition hover:bg-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800"
+    aria-label="Theme: System (click to switch to Light)"
+  >
+    <!-- Light Mode Icon -->
+    <i data-theme-icon="light" class="fa-solid fa-sun hidden text-amber-500" aria-hidden="true"></i>
+    <!-- Dark Mode Icon -->
+    <i data-theme-icon="dark" class="fa-solid fa-moon hidden text-blue-400" aria-hidden="true"></i>
+    <!-- System Mode Icon (default fallback before JS runs) -->
+    <i data-theme-icon="system" class="fa-solid fa-desktop text-slate-600 dark:text-slate-300" aria-hidden="true"></i>
+  </button>
 
-      <!-- Right Actions: Theme Toggle + CTA + Mobile Button -->
-      <div class="flex items-center gap-2.5">
-        <button
-          type="button"
-          data-theme-toggle
-          class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 text-slate-700 transition hover:bg-slate-100 dark:border-slate-800 dark:text-slate-200 dark:hover:bg-slate-800"
-          aria-label="Toggle dark mode"
-        >
-          <i class="fa-solid fa-moon dark:hidden" aria-hidden="true"></i>
-          <i class="fa-solid fa-sun hidden dark:inline" aria-hidden="true"></i>
-        </button>
+  <!-- Live Tooltip Indicator -->
+  <span
+    data-theme-tooltip
+    role="status"
+    aria-live="polite"
+    class="pointer-events-none invisible absolute left-1/2 top-full z-50 mt-2 -translate-x-1/2 translate-y-1 whitespace-nowrap rounded-lg border border-slate-200 bg-slate-900 px-2.5 py-1 text-[11px] font-semibold text-white opacity-0 shadow-lg transition-all duration-150 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100 dark:border-slate-700 dark:bg-slate-800"
+  >
+    Theme: System
+  </span>
+</div>
 
         <a href="https://itusolutions.github.io/updated-i-tu/form/contact-form/" class="hidden items-center gap-2 rounded-lg bg-green-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-green-700 md:inline-flex">
           <i class="fa-solid fa-screwdriver-wrench text-xs" aria-hidden="true"></i>
