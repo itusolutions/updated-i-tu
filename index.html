@@ -214,7 +214,7 @@
   </a>
 
   <header class="sticky top-0 z-50 border-b border-slate-200 bg-white/95 shadow-sm backdrop-blur dark:border-slate-800 dark:bg-slate-950/95">
-    <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3.5 sm:px-6 lg:px-8">
+    <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3.5 sm:px-6 lg:px-8">
       <!-- Brand Logo (Light & Dark Mode) -->
       <a href="https://itusolutions.github.io/updated-i-tu/" class="flex items-center gap-3" aria-label="iTu Solutions home">
         <img src="https://itusolutions.github.io/updated-i-tu/assets/logo/logo-light-mode.png" alt="iTu Solutions" class="block h-10 w-auto dark:hidden" loading="eager">
@@ -224,25 +224,22 @@
           <span class="block text-xs text-slate-500 dark:text-slate-400">IT Support &amp; Digital Services</span>
         </span>
       </a>
-      
-<button
-  id="themeToggle"
-  type="button"
-  data-theme-toggle
-  class="theme-toggle relative inline-flex h-10 w-10 cursor-pointer select-none items-center justify-center rounded-lg border border-slate-200 text-slate-700 transition hover:bg-slate-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 dark:border-slate-800 dark:text-slate-200 dark:hover:bg-slate-800"
-  aria-label="Toggle Theme"
-  aria-pressed="false"
->
-  <i
-    class="fas fa-sun light-icon inline-block text-lg text-amber-500 transition-transform duration-150 group-active:scale-90 dark:hidden"
-    aria-hidden="true"
-  ></i>
-  <i
-    class="fas fa-moon dark-icon hidden text-lg text-blue-400 transition-transform duration-150 group-active:scale-90 dark:inline-block"
-    aria-hidden="true"
-  ></i>
-  <span class="sr-only">Toggle Theme</span>
-</button>
+
+      <!-- Right Actions: Theme Toggle -->
+      <div class="flex items-center gap-2">
+        <button
+          id="themeToggle"
+          type="button"
+          data-theme-toggle
+          class="theme-toggle group relative inline-flex h-10 w-10 cursor-pointer select-none items-center justify-center rounded-lg border border-slate-200 bg-white text-slate-700 transition hover:bg-slate-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800"
+          aria-label="Toggle Theme"
+          aria-pressed="false"
+        >
+          <i class="fas fa-sun light-icon inline-block text-lg text-amber-500 transition-transform duration-150 group-active:scale-90 dark:hidden" aria-hidden="true"></i>
+          <i class="fas fa-moon dark-icon hidden text-lg text-blue-400 transition-transform duration-150 group-active:scale-90 dark:inline-block" aria-hidden="true"></i>
+          <span class="sr-only">Toggle Theme</span>
+        </button>
+      </div>
 
         <a href="https://itusolutions.github.io/updated-i-tu/form/contact-form/" class="hidden items-center gap-2 rounded-lg bg-green-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-green-700 md:inline-flex">
           <i class="fa-solid fa-screwdriver-wrench text-xs" aria-hidden="true"></i>
