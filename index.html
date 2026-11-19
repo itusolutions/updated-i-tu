@@ -1114,27 +1114,34 @@
     </section>
   </main>
 
-  <footer class="border-t border-slate-800 bg-slate-950 text-slate-300">
+
+  <footer class="border-t border-slate-200 bg-white text-slate-700 transition-colors dark:border-slate-800 dark:bg-slate-950 dark:text-slate-300">
   <!-- Row 1: 5 Columns (Brand + Map | Quick Links | Popular Services | Connect | Subscribe) -->
   <div class="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 md:grid-cols-2 lg:grid-cols-5 lg:px-8">
     <!-- Column 1: Logo, Address & Map -->
     <div class="space-y-4">
-      <a href="https://itusolutions.github.io/updated-i-tu/" class="inline-flex items-center gap-3 text-xl font-black text-white">
+      <a href="https://itusolutions.github.io/updated-i-tu/" class="inline-flex items-center gap-3 text-xl font-black text-slate-950 dark:text-white">
+        <img
+          src="https://itusolutions.github.io/updated-i-tu/assets/logo/logo-light-mode.png"
+          alt="iTu Solutions"
+          class="block h-9 w-auto dark:hidden"
+          loading="lazy"
+        >
         <img
           src="https://itusolutions.github.io/updated-i-tu/assets/logo/logo-dark-mode.png"
           alt="iTu Solutions"
-          class="h-9 w-auto"
+          class="hidden h-9 w-auto dark:block"
           loading="lazy"
         >
         <span>iTu Solutions</span>
       </a>
 
-      <p class="flex items-start gap-2 text-sm text-slate-400">
-        <i class="fa-solid fa-location-dot mt-1 shrink-0 text-blue-400" aria-hidden="true"></i>
+      <p class="flex items-start gap-2 text-sm text-slate-600 dark:text-slate-400">
+        <i class="fa-solid fa-location-dot mt-1 shrink-0 text-blue-600 dark:text-blue-400" aria-hidden="true"></i>
         <span>Ga-Mothiba, Nobody, Polokwane, Limpopo, 0726, South Africa.</span>
       </p>
 
-      <div class="overflow-hidden rounded-xl border border-slate-800 bg-slate-900">
+      <div class="overflow-hidden rounded-xl border border-slate-200 bg-slate-100 dark:border-slate-800 dark:bg-slate-900">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d10320.042612781052!2d29.67196851880083!3d-23.865279354716463!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6a3738b4cd0c1e8f%3A0xf8ac26af66df5c95!2siT-U!5e0!3m2!1sen!2sza!4v1795093491593!5m2!1sen!2sza"
           class="h-44 w-full"
@@ -1149,39 +1156,39 @@
 
     <!-- Column 2: Quick Links (Blue Heading + Top Accent Line) -->
     <div>
-      <span class="mb-2.5 block h-1 w-10 rounded-full bg-blue-400" aria-hidden="true"></span>
-      <h2 class="flex items-center gap-2 font-bold text-blue-400">
+      <span class="mb-2.5 block h-1 w-10 rounded-full bg-blue-600 dark:bg-blue-400" aria-hidden="true"></span>
+      <h2 class="flex items-center gap-2 font-bold text-blue-700 dark:text-blue-400">
         <i class="fa-solid fa-compass text-xs" aria-hidden="true"></i>
         <span>Quick links</span>
       </h2>
       <ul class="mt-4 space-y-2.5 text-sm">
         <li>
-          <a class="inline-flex items-center gap-2 transition hover:text-blue-300" href="https://itusolutions.github.io/updated-i-tu/about/">
-            <i class="fa-solid fa-circle-info w-4 text-xs text-blue-400/80" aria-hidden="true"></i>
+          <a class="inline-flex items-center gap-2 transition hover:text-blue-700 dark:hover:text-blue-300" href="https://itusolutions.github.io/updated-i-tu/about/">
+            <i class="fa-solid fa-circle-info w-4 text-xs text-blue-600/80 dark:text-blue-400/80" aria-hidden="true"></i>
             <span>About us</span>
           </a>
         </li>
         <li>
-          <a class="inline-flex items-center gap-2 transition hover:text-blue-300" href="https://itusolutions.github.io/updated-i-tu/services/">
-            <i class="fa-solid fa-grip w-4 text-xs text-blue-400/80" aria-hidden="true"></i>
+          <a class="inline-flex items-center gap-2 transition hover:text-blue-700 dark:hover:text-blue-300" href="https://itusolutions.github.io/updated-i-tu/services/">
+            <i class="fa-solid fa-grip w-4 text-xs text-blue-600/80 dark:text-blue-400/80" aria-hidden="true"></i>
             <span>Services</span>
           </a>
         </li>
         <li>
-          <a class="inline-flex items-center gap-2 transition hover:text-blue-300" href="https://itusolutions.github.io/updated-i-tu/pricing/">
-            <i class="fa-solid fa-tags w-4 text-xs text-blue-400/80" aria-hidden="true"></i>
+          <a class="inline-flex items-center gap-2 transition hover:text-blue-700 dark:hover:text-blue-300" href="https://itusolutions.github.io/updated-i-tu/pricing/">
+            <i class="fa-solid fa-tags w-4 text-xs text-blue-600/80 dark:text-blue-400/80" aria-hidden="true"></i>
             <span>Pricing</span>
           </a>
         </li>
         <li>
-          <a class="inline-flex items-center gap-2 transition hover:text-blue-300" href="https://itusolutions.github.io/updated-i-tu/portfolio/">
-            <i class="fa-solid fa-briefcase w-4 text-xs text-blue-400/80" aria-hidden="true"></i>
+          <a class="inline-flex items-center gap-2 transition hover:text-blue-700 dark:hover:text-blue-300" href="https://itusolutions.github.io/updated-i-tu/portfolio/">
+            <i class="fa-solid fa-briefcase w-4 text-xs text-blue-600/80 dark:text-blue-400/80" aria-hidden="true"></i>
             <span>Portfolio</span>
           </a>
         </li>
         <li>
-          <a class="inline-flex items-center gap-2 transition hover:text-blue-300" href="https://itusolutions.github.io/updated-i-tu/blog/">
-            <i class="fa-solid fa-newspaper w-4 text-xs text-blue-400/80" aria-hidden="true"></i>
+          <a class="inline-flex items-center gap-2 transition hover:text-blue-700 dark:hover:text-blue-300" href="https://itusolutions.github.io/updated-i-tu/blog/">
+            <i class="fa-solid fa-newspaper w-4 text-xs text-blue-600/80 dark:text-blue-400/80" aria-hidden="true"></i>
             <span>Blog</span>
           </a>
         </li>
@@ -1190,39 +1197,39 @@
 
     <!-- Column 3: Popular Services (Purple Heading + Top Accent Line) -->
     <div>
-      <span class="mb-2.5 block h-1 w-10 rounded-full bg-purple-400" aria-hidden="true"></span>
-      <h2 class="flex items-center gap-2 font-bold text-purple-400">
+      <span class="mb-2.5 block h-1 w-10 rounded-full bg-purple-600 dark:bg-purple-400" aria-hidden="true"></span>
+      <h2 class="flex items-center gap-2 font-bold text-purple-700 dark:text-purple-400">
         <i class="fa-solid fa-screwdriver-wrench text-xs" aria-hidden="true"></i>
         <span>Popular services</span>
       </h2>
       <ul class="mt-4 space-y-2.5 text-sm">
         <li>
-          <a class="inline-flex items-center gap-2 transition hover:text-purple-300" href="https://itusolutions.github.io/updated-i-tu/services/computer-repairs/">
-            <i class="fa-solid fa-laptop-medical w-4 text-xs text-purple-400/80" aria-hidden="true"></i>
+          <a class="inline-flex items-center gap-2 transition hover:text-purple-700 dark:hover:text-purple-300" href="https://itusolutions.github.io/updated-i-tu/services/computer-repairs/">
+            <i class="fa-solid fa-laptop-medical w-4 text-xs text-purple-600/80 dark:text-purple-400/80" aria-hidden="true"></i>
             <span>Computer repairs</span>
           </a>
         </li>
         <li>
-          <a class="inline-flex items-center gap-2 transition hover:text-purple-300" href="https://itusolutions.github.io/updated-i-tu/services/hardware-upgrades/">
-            <i class="fa-solid fa-microchip w-4 text-xs text-purple-400/80" aria-hidden="true"></i>
+          <a class="inline-flex items-center gap-2 transition hover:text-purple-700 dark:hover:text-purple-300" href="https://itusolutions.github.io/updated-i-tu/services/hardware-upgrades/">
+            <i class="fa-solid fa-microchip w-4 text-xs text-purple-600/80 dark:text-purple-400/80" aria-hidden="true"></i>
             <span>Hardware upgrades</span>
           </a>
         </li>
         <li>
-          <a class="inline-flex items-center gap-2 transition hover:text-purple-300" href="https://itusolutions.github.io/updated-i-tu/services/software-installation/">
-            <i class="fa-solid fa-download w-4 text-xs text-purple-400/80" aria-hidden="true"></i>
+          <a class="inline-flex items-center gap-2 transition hover:text-purple-700 dark:hover:text-purple-300" href="https://itusolutions.github.io/updated-i-tu/services/software-installation/">
+            <i class="fa-solid fa-download w-4 text-xs text-purple-600/80 dark:text-purple-400/80" aria-hidden="true"></i>
             <span>Software installation</span>
           </a>
         </li>
         <li>
-          <a class="inline-flex items-center gap-2 transition hover:text-purple-300" href="https://itusolutions.github.io/updated-i-tu/services/it-support/">
-            <i class="fa-solid fa-headset w-4 text-xs text-purple-400/80" aria-hidden="true"></i>
+          <a class="inline-flex items-center gap-2 transition hover:text-purple-700 dark:hover:text-purple-300" href="https://itusolutions.github.io/updated-i-tu/services/it-support/">
+            <i class="fa-solid fa-headset w-4 text-xs text-purple-600/80 dark:text-purple-400/80" aria-hidden="true"></i>
             <span>IT support</span>
           </a>
         </li>
         <li>
-          <a class="inline-flex items-center gap-2 transition hover:text-purple-300" href="https://itusolutions.github.io/updated-i-tu/services/website-development/">
-            <i class="fa-solid fa-code w-4 text-xs text-purple-400/80" aria-hidden="true"></i>
+          <a class="inline-flex items-center gap-2 transition hover:text-purple-700 dark:hover:text-purple-300" href="https://itusolutions.github.io/updated-i-tu/services/website-development/">
+            <i class="fa-solid fa-code w-4 text-xs text-purple-600/80 dark:text-purple-400/80" aria-hidden="true"></i>
             <span>Website development</span>
           </a>
         </li>
@@ -1231,52 +1238,52 @@
 
     <!-- Column 4: Connect (Lime Heading + Top Accent Line) -->
     <div>
-      <span class="mb-2.5 block h-1 w-10 rounded-full bg-lime-400" aria-hidden="true"></span>
-      <h2 class="flex items-center gap-2 font-bold text-lime-400">
+      <span class="mb-2.5 block h-1 w-10 rounded-full bg-lime-600 dark:bg-lime-400" aria-hidden="true"></span>
+      <h2 class="flex items-center gap-2 font-bold text-lime-700 dark:text-lime-400">
         <i class="fa-solid fa-comments text-xs" aria-hidden="true"></i>
         <span>Connect</span>
       </h2>
       <ul class="mt-4 space-y-2.5 text-sm">
         <li>
-          <a class="inline-flex items-center gap-2 transition hover:text-lime-300" href="https://wa.me/27711405870" target="_blank" rel="noopener noreferrer">
-            <i class="fa-brands fa-whatsapp w-4 text-sm text-lime-400" aria-hidden="true"></i>
+          <a class="inline-flex items-center gap-2 transition hover:text-lime-700 dark:hover:text-lime-300" href="https://wa.me/27711405870" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-whatsapp w-4 text-sm text-lime-600 dark:text-lime-400" aria-hidden="true"></i>
             <span>WhatsApp</span>
           </a>
         </li>
         <li>
-          <a class="inline-flex items-center gap-2 transition hover:text-lime-300" href="tel:+27711405870">
-            <i class="fa-solid fa-phone w-4 text-xs text-lime-400" aria-hidden="true"></i>
+          <a class="inline-flex items-center gap-2 transition hover:text-lime-700 dark:hover:text-lime-300" href="tel:+27711405870">
+            <i class="fa-solid fa-phone w-4 text-xs text-lime-600 dark:text-lime-400" aria-hidden="true"></i>
             <span>+27 71 140 5870</span>
           </a>
         </li>
         <li>
-          <a class="inline-flex items-center gap-2 transition hover:text-lime-300" href="mailto:sekoalabopape@gmail.com">
-            <i class="fa-solid fa-envelope w-4 text-xs text-lime-400" aria-hidden="true"></i>
+          <a class="inline-flex items-center gap-2 transition hover:text-lime-700 dark:hover:text-lime-300" href="mailto:sekoalabopape@gmail.com">
+            <i class="fa-solid fa-envelope w-4 text-xs text-lime-600 dark:text-lime-400" aria-hidden="true"></i>
             <span>Email us</span>
           </a>
         </li>
         <li>
-          <a class="inline-flex items-center gap-2 transition hover:text-lime-300" href="https://itusolutions.github.io/updated-i-tu/form/contact-form/">
-            <i class="fa-solid fa-paper-plane w-4 text-xs text-lime-400" aria-hidden="true"></i>
+          <a class="inline-flex items-center gap-2 transition hover:text-lime-700 dark:hover:text-lime-300" href="https://itusolutions.github.io/updated-i-tu/form/contact-form/">
+            <i class="fa-solid fa-paper-plane w-4 text-xs text-lime-600 dark:text-lime-400" aria-hidden="true"></i>
             <span>Contact page</span>
           </a>
         </li>
       </ul>
     </div>
 
-    <!-- Column 5: Subscribe (Yellow Heading + Top Accent Line) -->
+    <!-- Column 5: Subscribe (Amber/Yellow Heading + Top Accent Line) -->
     <div>
-      <span class="mb-2.5 block h-1 w-10 rounded-full bg-yellow-400" aria-hidden="true"></span>
-      <h2 class="flex items-center gap-2 font-bold text-yellow-400">
+      <span class="mb-2.5 block h-1 w-10 rounded-full bg-amber-500 dark:bg-yellow-400" aria-hidden="true"></span>
+      <h2 class="flex items-center gap-2 font-bold text-amber-700 dark:text-yellow-400">
         <i class="fa-solid fa-bell text-xs" aria-hidden="true"></i>
         <span>Newsletter</span>
       </h2>
-      <p class="mt-4 text-sm leading-6 text-slate-400">
+      <p class="mt-4 text-sm leading-6 text-slate-600 dark:text-slate-400">
         Get practical IT tips, repair guides, and updates from iTu Solutions.
       </p>
       <a
-        href="https://itusolutions.github.io/updated-i-tu/form/newsletter/"
-        class="mt-4 inline-flex items-center gap-2 rounded-lg bg-yellow-400 px-4 py-2.5 text-sm font-bold text-slate-950 transition hover:bg-yellow-300"
+        href="https://itusolutions.github.io/updated-i-tu/form/newsletter/index.html"
+        class="mt-4 inline-flex items-center gap-2 rounded-lg bg-amber-500 px-4 py-2.5 text-sm font-bold text-slate-950 transition hover:bg-amber-400 dark:bg-yellow-400 dark:hover:bg-yellow-300"
       >
         <i class="fa-solid fa-envelope-open-text text-xs" aria-hidden="true"></i>
         <span>Subscribe</span>
@@ -1285,43 +1292,43 @@
   </div>
 
   <!-- Row 2: 2 Columns (Legal | Social Icons & Go Back) -->
-  <div class="border-t border-white/10 bg-slate-950/80">
+  <div class="border-t border-slate-200 bg-slate-50 dark:border-white/10 dark:bg-slate-950/80">
     <div class="mx-auto grid max-w-7xl gap-8 px-4 py-8 sm:px-6 md:grid-cols-2 lg:px-8">
       <!-- Row 2, Col 1: Legal (Orange Heading + Top Accent Line) -->
       <div>
-        <span class="mb-2.5 block h-1 w-10 rounded-full bg-orange-400" aria-hidden="true"></span>
-        <h2 class="flex items-center gap-2 font-bold text-orange-400">
+        <span class="mb-2.5 block h-1 w-10 rounded-full bg-orange-600 dark:bg-orange-400" aria-hidden="true"></span>
+        <h2 class="flex items-center gap-2 font-bold text-orange-700 dark:text-orange-400">
           <i class="fa-solid fa-scale-balanced text-xs" aria-hidden="true"></i>
           <span>Legal</span>
         </h2>
         <ul class="mt-4 flex flex-wrap gap-x-6 gap-y-2.5 text-sm">
           <li>
-            <a class="inline-flex items-center gap-2 transition hover:text-orange-300" href="https://itusolutions.github.io/updated-i-tu/legal/privacy-policy/">
-              <i class="fa-solid fa-user-shield w-4 text-xs text-orange-400/80" aria-hidden="true"></i>
+            <a class="inline-flex items-center gap-2 transition hover:text-orange-700 dark:hover:text-orange-300" href="https://itusolutions.github.io/updated-i-tu/legal/privacy-policy/">
+              <i class="fa-solid fa-user-shield w-4 text-xs text-orange-600/80 dark:text-orange-400/80" aria-hidden="true"></i>
               <span>Privacy policy</span>
             </a>
           </li>
           <li>
-            <a class="inline-flex items-center gap-2 transition hover:text-orange-300" href="https://itusolutions.github.io/updated-i-tu/legal/terms-and-conditions/">
-              <i class="fa-solid fa-file-contract w-4 text-xs text-orange-400/80" aria-hidden="true"></i>
+            <a class="inline-flex items-center gap-2 transition hover:text-orange-700 dark:hover:text-orange-300" href="https://itusolutions.github.io/updated-i-tu/legal/terms-and-conditions/">
+              <i class="fa-solid fa-file-contract w-4 text-xs text-orange-600/80 dark:text-orange-400/80" aria-hidden="true"></i>
               <span>Terms and conditions</span>
             </a>
           </li>
           <li>
-            <a class="inline-flex items-center gap-2 transition hover:text-orange-300" href="https://itusolutions.github.io/updated-i-tu/legal/service-policy/">
-              <i class="fa-solid fa-clipboard-check w-4 text-xs text-orange-400/80" aria-hidden="true"></i>
+            <a class="inline-flex items-center gap-2 transition hover:text-orange-700 dark:hover:text-orange-300" href="https://itusolutions.github.io/updated-i-tu/legal/service-policy/">
+              <i class="fa-solid fa-clipboard-check w-4 text-xs text-orange-600/80 dark:text-orange-400/80" aria-hidden="true"></i>
               <span>Service policy</span>
             </a>
           </li>
           <li>
-            <a class="inline-flex items-center gap-2 transition hover:text-orange-300" href="https://itusolutions.github.io/updated-i-tu/legal/cookie-policy/">
-              <i class="fa-solid fa-cookie-bite w-4 text-xs text-orange-400/80" aria-hidden="true"></i>
+            <a class="inline-flex items-center gap-2 transition hover:text-orange-700 dark:hover:text-orange-300" href="https://itusolutions.github.io/updated-i-tu/legal/cookie-policy/">
+              <i class="fa-solid fa-cookie-bite w-4 text-xs text-orange-600/80 dark:text-orange-400/80" aria-hidden="true"></i>
               <span>Cookie policy</span>
             </a>
           </li>
           <li>
-            <a class="inline-flex items-center gap-2 transition hover:text-orange-300" href="https://itusolutions.github.io/updated-i-tu/faq/">
-              <i class="fa-solid fa-circle-question w-4 text-xs text-orange-400/80" aria-hidden="true"></i>
+            <a class="inline-flex items-center gap-2 transition hover:text-orange-700 dark:hover:text-orange-300" href="https://itusolutions.github.io/updated-i-tu/faq/">
+              <i class="fa-solid fa-circle-question w-4 text-xs text-orange-600/80 dark:text-orange-400/80" aria-hidden="true"></i>
               <span>FAQs</span>
             </a>
           </li>
@@ -1331,19 +1338,19 @@
       <!-- Row 2, Col 2: Social Icons & Go Back Button -->
       <div class="flex flex-col justify-between gap-4 md:items-end">
         <div class="flex flex-wrap items-center gap-2.5">
-          <a href="https://wa.me/27711405870" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-800 bg-slate-900 text-lime-400 transition hover:border-lime-400/50 hover:bg-slate-800">
+          <a href="https://wa.me/27711405870" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 bg-white text-lime-700 shadow-2xs transition hover:border-lime-600/50 hover:bg-slate-100 dark:border-slate-800 dark:bg-slate-900 dark:text-lime-400 dark:shadow-none dark:hover:border-lime-400/50 dark:hover:bg-slate-800">
             <i class="fa-brands fa-whatsapp text-base" aria-hidden="true"></i>
           </a>
-          <a href="https://github.com/itusolutions" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-800 bg-slate-900 text-blue-400 transition hover:border-blue-400/50 hover:bg-slate-800">
+          <a href="https://github.com/itusolutions" target="_blank" rel="noopener noreferrer" aria-label="GitHub" class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 bg-white text-blue-700 shadow-2xs transition hover:border-blue-600/50 hover:bg-slate-100 dark:border-slate-800 dark:bg-slate-900 dark:text-blue-400 dark:shadow-none dark:hover:border-blue-400/50 dark:hover:bg-slate-800">
             <i class="fa-brands fa-github text-base" aria-hidden="true"></i>
           </a>
-          <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-800 bg-slate-900 text-purple-400 transition hover:border-purple-400/50 hover:bg-slate-800">
+          <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 bg-white text-purple-700 shadow-2xs transition hover:border-purple-600/50 hover:bg-slate-100 dark:border-slate-800 dark:bg-slate-900 dark:text-purple-400 dark:shadow-none dark:hover:border-purple-400/50 dark:hover:bg-slate-800">
             <i class="fa-brands fa-linkedin-in text-base" aria-hidden="true"></i>
           </a>
-          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-800 bg-slate-900 text-yellow-400 transition hover:border-yellow-400/50 hover:bg-slate-800">
+          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 bg-white text-amber-700 shadow-2xs transition hover:border-amber-600/50 hover:bg-slate-100 dark:border-slate-800 dark:bg-slate-900 dark:text-yellow-400 dark:shadow-none dark:hover:border-yellow-400/50 dark:hover:bg-slate-800">
             <i class="fa-brands fa-facebook-f text-base" aria-hidden="true"></i>
           </a>
-          <a href="mailto:sekoalabopape@gmail.com" aria-label="Email" class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-800 bg-slate-900 text-orange-400 transition hover:border-orange-400/50 hover:bg-slate-800">
+          <a href="mailto:sekoalabopape@gmail.com" aria-label="Email" class="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 bg-white text-orange-700 shadow-2xs transition hover:border-orange-600/50 hover:bg-slate-100 dark:border-slate-800 dark:bg-slate-900 dark:text-orange-400 dark:shadow-none dark:hover:border-orange-400/50 dark:hover:bg-slate-800">
             <i class="fa-solid fa-envelope text-base" aria-hidden="true"></i>
           </a>
         </div>
@@ -1351,9 +1358,9 @@
         <button
           type="button"
           onclick="if (window.history.length > 1) { window.history.back(); } else { window.location.href = 'https://itusolutions.github.io/updated-i-tu/'; }"
-          class="inline-flex cursor-pointer items-center gap-2 rounded-lg border border-slate-700 bg-slate-900 px-3.5 py-2 text-xs font-semibold text-slate-200 transition hover:border-blue-400 hover:text-blue-300"
+          class="inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-3.5 py-2 text-xs font-semibold text-slate-800 shadow-2xs transition hover:border-blue-600 hover:text-blue-700 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:shadow-none dark:hover:border-blue-400 dark:hover:text-blue-300"
         >
-          <i class="fa-solid fa-arrow-left text-xs text-blue-400" aria-hidden="true"></i>
+          <i class="fa-solid fa-arrow-left text-xs text-blue-600 dark:text-blue-400" aria-hidden="true"></i>
           <span>Go back</span>
         </button>
       </div>
@@ -1361,11 +1368,11 @@
   </div>
 
   <!-- Row 3: 3 Columns (Motto | Copyrights | Developer) -->
-  <div class="border-t border-white/10">
-    <div class="mx-auto grid max-w-7xl gap-4 px-4 py-5 text-xs text-slate-400 sm:px-6 md:grid-cols-3 md:items-center lg:px-8">
+  <div class="border-t border-slate-200 dark:border-white/10">
+    <div class="mx-auto grid max-w-7xl gap-4 px-4 py-5 text-xs text-slate-600 dark:text-slate-400 sm:px-6 md:grid-cols-3 md:items-center lg:px-8">
       <!-- Row 3, Col 1: Motto -->
       <p class="inline-flex items-center gap-2">
-        <i class="fa-solid fa-sparkles text-yellow-400" aria-hidden="true"></i>
+        <i class="fa-solid fa-sparkles text-amber-500 dark:text-yellow-400" aria-hidden="true"></i>
         <span>Technology made simple. Practical IT services and digital solutions.</span>
       </p>
 
@@ -1374,24 +1381,24 @@
         &copy; <span id="current-year" data-current-year>2026</span> iTu Solutions. All rights reserved.
       </p>
 
-      <!-- Row 3, Col 3: Developer with Circular Dark & Light Logos -->
+      <!-- Row 3, Col 3: Developer with Circular Light & Dark Logos -->
       <div class="flex items-center gap-2.5 md:justify-end">
-        <a href="https://itusolutions.github.io/updated-i-tu/about/" class="group inline-flex items-center gap-2.5 text-slate-300 transition hover:text-lime-300">
-          <span class="inline-flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-full border border-slate-700 bg-slate-900 ring-1 ring-white/10 transition group-hover:border-lime-400/60">
-            <img
-              src="https://itusolutions.github.io/updated-i-tu/assets/logo/sekoala-logo-dark-mode.png"
-              alt="Sekoala Daniel Bopape logo"
-              class="hidden h-full w-full rounded-full object-cover dark:block"
-              loading="lazy"
-            >
+        <a href="https://itusolutions.github.io/updated-i-tu/about/" class="inline-flex items-center gap-2.5 text-slate-700 transition hover:text-lime-700 dark:text-slate-300 dark:hover:text-lime-300">
+          <span class="inline-flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-full border border-slate-300 bg-slate-100 ring-1 ring-black/5 dark:border-slate-700 dark:bg-slate-900 dark:ring-white/10">
             <img
               src="https://itusolutions.github.io/updated-i-tu/assets/logo/sekoala-logo-light-mode.png"
               alt="Sekoala Daniel Bopape light logo"
               class="block h-full w-full rounded-full object-cover dark:hidden"
               loading="lazy"
             >
+            <img
+              src="https://itusolutions.github.io/updated-i-tu/assets/logo/sekoala-logo-dark-mode.png"
+              alt="Sekoala Daniel Bopape logo"
+              class="hidden h-full w-full rounded-full object-cover dark:block"
+              loading="lazy"
+            >
           </span>
-          <span>Developed by <strong class="font-semibold text-white">Sekoala Daniel Bopape</strong></span>
+          <span>Developed by <strong class="font-semibold text-slate-950 dark:text-white">Sekoala Daniel Bopape</strong></span>
         </a>
       </div>
     </div>
