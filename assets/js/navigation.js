@@ -48,7 +48,7 @@
       );
     }
 
-    // Ensure consistent initial closed state on load
+    // Start closed on load without touching desktop navigation
     setOpen(false);
 
     button.addEventListener("click", function (event) {
@@ -94,7 +94,9 @@
 
   function highlightActiveLinks() {
     const currentPath = normalizePath(window.location.pathname);
-    const navLinks = document.querySelectorAll("header nav a[href]");
+    const navLinks = document.querySelectorAll(
+      'header nav[aria-label="Main navigation"] a[href], #mobile-menu a[href]'
+    );
 
     navLinks.forEach((link) => {
       const href = link.getAttribute("href");
@@ -119,6 +121,13 @@
       const linkPath = normalizePath(parsedUrl.pathname);
       const isMatch = linkPath === currentPath;
 
+      link.classList.remove(
+        "bg-blue-50",
+        "text-blue-700",
+        "dark:bg-slate-900",
+        "dark:text-blue-400"
+      );
+
       if (isMatch) {
         link.setAttribute("aria-current", "page");
         link.classList.add(
@@ -129,12 +138,6 @@
         );
       } else {
         link.removeAttribute("aria-current");
-        link.classList.remove(
-          "bg-blue-50",
-          "text-blue-700",
-          "dark:bg-slate-900",
-          "dark:text-blue-400"
-        );
       }
     });
   }
