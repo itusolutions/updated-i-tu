@@ -1,9 +1,33 @@
 (function () {
-  function normalizePath(pathname) {
-    if (!pathname) return "/";
-    const clean = pathname.split("?")[0].split("#")[0];
-    if (clean === "/" || clean === "/index.html") return "/";
-    return clean.replace(/\/+$/, "").toLowerCase() + "/";
+  const BASE_PATH = "/updated-i-tu";
+
+  function stripBasePath(pathname) {
+    let clean = (pathname || "/").split("?")[0].split("#")[0].toLowerCase();
+    const base = BASE_PATH.toLowerCase();
+
+    if (clean === base || clean === base + "/" || clean === base + "/index.html") {
+      return "/";
+    }
+
+    if (clean.startsWith(base + "/")) {
+      clean = clean.slice(base.length);
+    }
+
+    if (clean === "" || clean === "/" || clean === "/index.html") {
+      return "/";
+    }
+
+    return clean.replace(/\/+$/, "") + "/";
+  }
+
+  function normalizePath(pathOrUrl) {
+    if (!pathOrUrl) return "/";
+    try {
+      const parsed = new URL(pathOrUrl, window.location.origin);
+      return stripBasePath(parsed.pathname);
+    } catch (e) {
+      return stripBasePath(pathOrUrl);
+    }
   }
 
   function initMobileMenu() {
@@ -67,18 +91,43 @@
 
     navLinks.forEach((link) => {
       const href = link.getAttribute("href");
-      if (!href || href.startsWith("#") || href.startsWith("http") || href.startsWith("mailto:") || href.startsWith("tel:")) {
+      if (
+        !href ||
+        href.startsWith("#") ||
+        href.startsWith("mailto:") ||
+        href.startsWith("tel:")
+      ) {
         return;
       }
 
-      const linkPath = normalizePath(href);
+      let parsedUrl;
+      try {
+        parsedUrl = new URL(href, window.location.origin);
+      } catch (e) {
+        return;
+      }
+
+      if (parsedUrl.origin !== window.location.origin) return;
+
+      const linkPath = normalizePath(parsedUrl.pathname);
       const isMatch = linkPath === currentPath;
 
       if (isMatch) {
         link.setAttribute("aria-current", "page");
-        link.classList.add("bg-blue-50", "text-blue-700", "dark:bg-slate-900", "dark:text-blue-400");
+        link.classList.add(
+          "bg-blue-50",
+          "text-blue-700",
+          "dark:bg-slate-900",
+          "dark:text-blue-400"
+        );
       } else {
         link.removeAttribute("aria-current");
+        link.classList.remove(
+          "bg-blue-50",
+          "text-blue-700",
+          "dark:bg-slate-900",
+          "dark:text-blue-400"
+        );
       }
     });
   }
