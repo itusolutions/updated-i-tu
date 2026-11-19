@@ -237,7 +237,7 @@
         <a class="rounded-lg px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-700" href="/pricing/">Pricing</a>
         <a class="rounded-lg px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-700" href="/portfolio/">Portfolio</a>
         <a class="rounded-lg px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-700" href="/blog/">Blog</a>
-        <a class="rounded-lg px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-700" href="/contact/">Contact</a>
+        <a class="rounded-lg px-4 py-3 text-sm font-semibold text-slate-700 hover:bg-blue-50 hover:text-blue-700" href="/form/contact-form/">Contact</a>
       </div>
     </nav>
 
@@ -264,68 +264,235 @@
         <a class="rounded-lg px-3 py-2 font-medium hover:bg-slate-100" href="/blog/">Blog</a>
         <a class="rounded-lg px-3 py-2 font-medium hover:bg-slate-100" href="/faq/">FAQ</a>
         <a class="rounded-lg px-3 py-2 font-medium hover:bg-slate-100" href="/support/">Support</a>
-        <a class="rounded-lg px-3 py-2 font-medium hover:bg-slate-100" href="/contact/">Contact</a>
+        <a class="rounded-lg px-3 py-2 font-medium hover:bg-slate-100" href="/form/contact-form/">Contact</a>
       </div>
     </nav>
   </header>
 
-  <main id="main">
+<main id="main" class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100">
+    <!-- Hero Section -->
     <section class="relative isolate overflow-hidden bg-slate-950">
       <div class="absolute inset-0 -z-10 bg-gradient-to-br from-blue-950 via-slate-950 to-green-950"></div>
       <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
-        <p class="mb-4 inline-flex rounded-full border border-green-300/30 bg-green-300/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-green-300">iTu Solutions · Polokwane, Limpopo</p>
-        <div class="max-w-3xl">
-          <h1 class="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-6xl">Technology Made Simple. Solutions That Work.</h1>
-          <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-300">Reliable computer services, practical IT support and professional websites for individuals, entrepreneurs and businesses.</p>
-          <div class="mt-8 flex flex-wrap gap-3">
-            <a href="/form/contact-form/" class="rounded-lg bg-green-500 px-6 py-3 font-bold text-slate-950 shadow-lg shadow-green-950/30 transition hover:bg-lime-400 focus:outline-none focus:ring-4 focus:ring-green-300/40">Explore our services</a>
-            <a href="/services/" class="rounded-lg border border-white/25 px-6 py-3 font-semibold text-white transition hover:bg-white/10">Browse services</a>
+        <div class="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_360px]">
+          <div class="max-w-3xl" data-aos="fade-up">
+            <p class="mb-4 inline-flex items-center gap-2 rounded-full border border-green-300/30 bg-green-300/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-green-300">
+              <i class="fa-solid fa-location-dot text-[11px]" aria-hidden="true"></i>
+              <span>iTu Solutions · Polokwane, Limpopo</span>
+            </p>
+            <h1 class="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-6xl">
+              Technology Made Simple. Solutions That Work.
+            </h1>
+            <p class="mt-4 min-h-[1.75rem] font-mono text-sm font-medium text-green-300 sm:text-base">
+              <span id="hero-typed"></span>
+            </p>
+            <p class="mt-5 max-w-2xl text-lg leading-8 text-slate-300">
+              Reliable computer services, practical IT support and professional websites for individuals, entrepreneurs and businesses.
+            </p>
+            <div class="mt-8 flex flex-wrap gap-3">
+              <a href="/form/contact-form/" class="inline-flex items-center gap-2 rounded-lg bg-green-500 px-6 py-3 font-bold text-slate-950 shadow-lg shadow-green-950/30 transition hover:bg-lime-400 focus:outline-none focus:ring-4 focus:ring-green-300/40">
+                <span>Explore our services</span>
+                <i class="fa-solid fa-arrow-right text-sm" aria-hidden="true"></i>
+              </a>
+              <a href="/services/" class="inline-flex items-center gap-2 rounded-lg border border-white/25 px-6 py-3 font-semibold text-white transition hover:bg-white/10 focus:outline-none focus:ring-4 focus:ring-white/20">
+                <i class="bx bx-grid-alt text-lg" aria-hidden="true"></i>
+                <span>Browse services</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="mx-auto w-full max-w-[360px] lg:mx-0" data-aos="fade-left" data-aos-delay="100">
+            <div class="rounded-3xl border border-white/10 bg-white/5 p-4 shadow-2xl backdrop-blur-sm">
+              <img
+                src="/assets/images/hero-tech.svg"
+                alt="iTu Solutions computer repair, IT support and web development illustration"
+                width="360"
+                height="260"
+                class="h-auto w-full rounded-2xl object-contain"
+                loading="eager"
+                decoding="async"
+              >
+            </div>
           </div>
         </div>
       </div>
-    
-      <div class="pointer-events-none absolute right-4 top-1/2 hidden -translate-y-1/2 lg:block xl:right-10" aria-hidden="true">
-        <img src="/assets/images/hero-tech.svg" alt="" width="360" height="260" class="h-auto w-[300px] rounded-3xl opacity-90 drop-shadow-2xl xl:w-[360px]" loading="eager" decoding="async">
-      </div>
-</section>
+    </section>
 
+    <!-- Core Overview & Sidebar -->
     <section class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
       <div class="grid gap-10 lg:grid-cols-[minmax(0,1fr)_320px]">
         <article class="min-w-0">
-          <p class="text-sm font-bold uppercase tracking-wider text-green-700">iTu Solutions</p>
-          <h2 class="mt-2 text-2xl font-extrabold tracking-tight text-slate-950 sm:text-3xl">Home</h2>
-          <p class="mt-4 max-w-3xl leading-7 text-slate-600">Computer repairs, IT support, software installation, hardware upgrades and professional website development in Polokwane, Limpopo.</p>
-          <div class="mt-8 grid gap-4 sm:grid-cols-2">
-            <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"><div class="mb-3 grid h-10 w-10 place-items-center rounded-xl bg-green-100 text-green-700">✓</div><h3 class="font-bold text-slate-900">Clear communication</h3><p class="mt-2 text-sm leading-6 text-slate-600">We explain the issue, available options and likely next steps in straightforward language.</p></div>
-            <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"><div class="mb-3 grid h-10 w-10 place-items-center rounded-xl bg-blue-100 text-blue-700">⌘</div><h3 class="font-bold text-slate-900">Practical solutions</h3><p class="mt-2 text-sm leading-6 text-slate-600">Recommendations are based on your requirements, device compatibility and budget.</p></div>
-            <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"><div class="mb-3 grid h-10 w-10 place-items-center rounded-xl bg-yellow-100 text-yellow-700">◎</div><h3 class="font-bold text-slate-900">Careful approach</h3><p class="mt-2 text-sm leading-6 text-slate-600">Work is discussed before proceeding, including parts, licensing and data considerations.</p></div>
-            <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"><div class="mb-3 grid h-10 w-10 place-items-center rounded-xl bg-orange-100 text-orange-700">↗</div><h3 class="font-bold text-slate-900">Support for different needs</h3><p class="mt-2 text-sm leading-6 text-slate-600">Services cover personal devices, study needs, small businesses and website projects.</p></div>
+          <div class="flex items-center gap-3">
+            <img src="/assets/logo/logo-light-mode.png" alt="iTu Solutions" class="block h-8 w-auto dark:hidden" loading="eager">
+            <img src="/assets/logo/logo-dark-mode.png" alt="iTu Solutions" class="hidden h-8 w-auto dark:block" loading="eager">
+            <p class="text-sm font-bold uppercase tracking-wider text-green-700 dark:text-green-400">iTu Solutions</p>
           </div>
-          
-        <div class="mt-8 flex flex-wrap gap-3">
-          <a href="/form/contact-form/" class="inline-flex items-center justify-center rounded-lg bg-blue-600 px-6 py-3 font-semibold text-white shadow-sm transition hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-200">Request a quotation</a>
-          <a href="/contact/" class="inline-flex items-center justify-center rounded-lg border border-slate-300 bg-white px-6 py-3 font-semibold text-slate-800 transition hover:bg-slate-50">Contact us</a>
-        </div>
+          <h2 class="mt-2 text-2xl font-extrabold tracking-tight text-slate-950 dark:text-white sm:text-3xl">Home</h2>
+          <p class="mt-4 max-w-3xl leading-7 text-slate-600 dark:text-slate-300">
+            Computer repairs, IT support, software installation, hardware upgrades and professional website development in Polokwane, Limpopo.
+          </p>
+
+          <div class="mt-8 grid gap-4 sm:grid-cols-2">
+            <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:border-green-300 dark:border-slate-800 dark:bg-slate-900" data-aos="fade-up">
+              <div class="mb-3 grid h-10 w-10 place-items-center rounded-xl bg-green-100 text-green-700 dark:bg-green-950 dark:text-green-400">
+                <i class="fa-solid fa-circle-check text-base" aria-hidden="true"></i>
+              </div>
+              <h3 class="font-bold text-slate-900 dark:text-white">Clear communication</h3>
+              <p class="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400">
+                We explain the issue, available options and likely next steps in straightforward language.
+              </p>
+            </div>
+
+            <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:border-blue-300 dark:border-slate-800 dark:bg-slate-900" data-aos="fade-up" data-aos-delay="50">
+              <div class="mb-3 grid h-10 w-10 place-items-center rounded-xl bg-blue-100 text-blue-700 dark:bg-blue-950 dark:text-blue-400">
+                <i class="fa-solid fa-wrench text-base" aria-hidden="true"></i>
+              </div>
+              <h3 class="font-bold text-slate-900 dark:text-white">Practical solutions</h3>
+              <p class="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400">
+                Recommendations are based on your requirements, device compatibility and budget.
+              </p>
+            </div>
+
+            <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:border-amber-300 dark:border-slate-800 dark:bg-slate-900" data-aos="fade-up" data-aos-delay="100">
+              <div class="mb-3 grid h-10 w-10 place-items-center rounded-xl bg-yellow-100 text-yellow-700 dark:bg-yellow-950 dark:text-yellow-400">
+                <i class="fa-solid fa-shield-halved text-base" aria-hidden="true"></i>
+              </div>
+              <h3 class="font-bold text-slate-900 dark:text-white">Careful approach</h3>
+              <p class="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400">
+                Work is discussed before proceeding, including parts, licensing and data considerations.
+              </p>
+            </div>
+
+            <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:border-orange-300 dark:border-slate-800 dark:bg-slate-900" data-aos="fade-up" data-aos-delay="150">
+              <div class="mb-3 grid h-10 w-10 place-items-center rounded-xl bg-orange-100 text-orange-700 dark:bg-orange-950 dark:text-orange-400">
+                <i class="fa-solid fa-arrows-up-to-line text-base" aria-hidden="true"></i>
+              </div>
+              <h3 class="font-bold text-slate-900 dark:text-white">Support for different needs</h3>
+              <p class="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400">
+                Services cover personal devices, study needs, small businesses and website projects.
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="/form/contact-form/" class="inline-flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-6 py-3 font-semibold text-white shadow-sm transition hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-200 dark:focus:ring-blue-900">
+              <i class="fa-solid fa-file-invoice text-sm" aria-hidden="true"></i>
+              <span>Request a quotation</span>
+            </a>
+            <a href="/contact/" class="inline-flex items-center justify-center gap-2 rounded-lg border border-slate-300 bg-white px-6 py-3 font-semibold text-slate-800 transition hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:hover:bg-slate-800">
+              <i class="fa-regular fa-envelope text-sm" aria-hidden="true"></i>
+              <span>Contact us</span>
+            </a>
+          </div>
         </article>
-        <aside class="h-fit rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-          <h2 class="text-lg font-extrabold text-slate-950">Need assistance?</h2>
-          <p class="mt-2 text-sm leading-6 text-slate-600">Tell us what you are trying to achieve or what is not working. We can discuss the appropriate next step.</p>
-          <a href="/contact/" class="mt-5 block rounded-lg bg-blue-600 px-4 py-3 text-center text-sm font-bold text-white hover:bg-blue-700">Contact iTu Solutions</a>
-          <a href="https://wa.me/27711405870" class="mt-3 block rounded-lg border border-green-200 bg-green-50 px-4 py-3 text-center text-sm font-bold text-green-800 hover:bg-green-100">WhatsApp us</a>
-          <div class="mt-6 border-t border-slate-100 pt-5 text-sm text-slate-600"><p class="font-semibold text-slate-900">Service area</p><p class="mt-1">Ga-Mothiba, Nobody, Polokwane, Limpopo, South Africa.</p></div>
+
+        <!-- Sidebar -->
+        <aside class="h-fit rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900" data-aos="fade-left">
+          <h2 class="text-lg font-extrabold text-slate-950 dark:text-white">Need assistance?</h2>
+          <p class="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400">
+            Tell us what you are trying to achieve or what is not working. We can discuss the appropriate next step.
+          </p>
+          <a href="/contact/" class="mt-5 flex items-center justify-center gap-2 rounded-lg bg-blue-600 px-4 py-3 text-center text-sm font-bold text-white transition hover:bg-blue-700">
+            <i class="fa-solid fa-headset" aria-hidden="true"></i>
+            <span>Contact iTu Solutions</span>
+          </a>
+          <a href="https://wa.me/27711405870" target="_blank" rel="noopener noreferrer" class="mt-3 flex items-center justify-center gap-2 rounded-lg border border-green-200 bg-green-50 px-4 py-3 text-center text-sm font-bold text-green-800 transition hover:bg-green-100 dark:border-green-800 dark:bg-green-950/60 dark:text-green-300 dark:hover:bg-green-950">
+            <i class="fa-brands fa-whatsapp text-base" aria-hidden="true"></i>
+            <span>WhatsApp us</span>
+          </a>
+          <div class="mt-6 border-t border-slate-100 pt-5 text-sm text-slate-600 dark:border-slate-800 dark:text-slate-400">
+            <p class="flex items-center gap-1.5 font-semibold text-slate-900 dark:text-white">
+              <i class="fa-solid fa-map-pin text-green-600 dark:text-green-400" aria-hidden="true"></i>
+              <span>Service area</span>
+            </p>
+            <p class="mt-1">Ga-Mothiba, Nobody, Polokwane, Limpopo, South Africa.</p>
+          </div>
         </aside>
       </div>
     </section>
 
-    <section class="border-y border-slate-200 bg-white">
+    <!-- Services Showcase Strip -->
+    <section class="border-t border-slate-200 bg-slate-100/70 py-14 dark:border-slate-800 dark:bg-slate-900/50">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
+          <div>
+            <p class="text-xs font-bold uppercase tracking-widest text-blue-600 dark:text-blue-400">Core Capabilities</p>
+            <h2 class="mt-1 text-2xl font-extrabold tracking-tight text-slate-950 dark:text-white sm:text-3xl">IT &amp; Web Services</h2>
+          </div>
+          <a href="/services/" class="inline-flex items-center gap-1.5 text-sm font-bold text-blue-600 hover:underline dark:text-blue-400">
+            <span>View all services</span>
+            <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
+          </a>
+        </div>
+
+        <div class="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
+          <a href="/services/#computer-repair" class="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-blue-400 dark:border-slate-800 dark:bg-slate-900" data-aos="fade-up">
+            <img src="/assets/images/computer-repair.svg" alt="Computer repair illustration" class="mx-auto h-24 w-auto object-contain" loading="lazy">
+            <h3 class="mt-4 text-center text-sm font-bold text-slate-900 group-hover:text-blue-600 dark:text-white dark:group-hover:text-blue-400">Computer Repair</h3>
+          </a>
+
+          <a href="/services/#hardware-upgrades" class="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-blue-400 dark:border-slate-800 dark:bg-slate-900" data-aos="fade-up" data-aos-delay="50">
+            <img src="/assets/images/hardware-upgrades.svg" alt="Hardware upgrades illustration" class="mx-auto h-24 w-auto object-contain" loading="lazy">
+            <h3 class="mt-4 text-center text-sm font-bold text-slate-900 group-hover:text-blue-600 dark:text-white dark:group-hover:text-blue-400">Hardware Upgrades</h3>
+          </a>
+
+          <a href="/services/#software-installation" class="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-blue-400 dark:border-slate-800 dark:bg-slate-900" data-aos="fade-up" data-aos-delay="100">
+            <img src="/assets/images/software-installation.svg" alt="Software installation illustration" class="mx-auto h-24 w-auto object-contain" loading="lazy">
+            <h3 class="mt-4 text-center text-sm font-bold text-slate-900 group-hover:text-blue-600 dark:text-white dark:group-hover:text-blue-400">Software &amp; OS Setup</h3>
+          </a>
+
+          <a href="/services/#networking" class="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-blue-400 dark:border-slate-800 dark:bg-slate-900" data-aos="fade-up" data-aos-delay="150">
+            <img src="/assets/images/networking.svg" alt="Networking and IT support illustration" class="mx-auto h-24 w-auto object-contain" loading="lazy">
+            <h3 class="mt-4 text-center text-sm font-bold text-slate-900 group-hover:text-blue-600 dark:text-white dark:group-hover:text-blue-400">Networking &amp; Support</h3>
+          </a>
+
+          <a href="/web-development/" class="group rounded-2xl border border-slate-200 bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-blue-400 dark:border-slate-800 dark:bg-slate-900" data-aos="fade-up" data-aos-delay="200">
+            <img src="/assets/images/website-development.svg" alt="Website development illustration" class="mx-auto h-24 w-auto object-contain" loading="lazy">
+            <h3 class="mt-4 text-center text-sm font-bold text-slate-900 group-hover:text-blue-600 dark:text-white dark:group-hover:text-blue-400">Website Development</h3>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bottom Call to Action -->
+    <section class="border-y border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-950">
       <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div class="flex flex-col justify-between gap-5 sm:flex-row sm:items-center">
-          <div><h2 class="text-2xl font-extrabold text-slate-950">Let's find the right solution.</h2><p class="mt-2 text-slate-600">Request an assessment or discuss your website requirements.</p></div>
-          <a href="/form/contact-form/" class="inline-flex justify-center rounded-lg bg-orange-500 px-6 py-3 font-bold text-white hover:bg-orange-600">Get in touch</a>
+          <div>
+            <h2 class="text-2xl font-extrabold text-slate-950 dark:text-white">Let's find the right solution.</h2>
+            <p class="mt-2 text-slate-600 dark:text-slate-400">Request an assessment or discuss your website requirements.</p>
+          </div>
+          <a href="/form/contact-form/" class="inline-flex items-center justify-center gap-2 rounded-lg bg-orange-500 px-6 py-3 font-bold text-white transition hover:bg-orange-600 focus:outline-none focus:ring-4 focus:ring-orange-200 dark:focus:ring-orange-900">
+            <span>Get in touch</span>
+            <i class="fa-solid fa-paper-plane text-sm" aria-hidden="true"></i>
+          </a>
         </div>
       </div>
     </section>
   </main>
+
+  <!-- Typed.js & AOS Initialization -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      if (typeof Typed !== "undefined" && document.getElementById("hero-typed")) {
+        new Typed("#hero-typed", {
+          strings: [
+            "Computer Repairs · Polokwane",
+            "Hardware Upgrades & Diagnostics",
+            "Software & OS Installation",
+            "Responsive Website Development"
+          ],
+          typeSpeed: 45,
+          backSpeed: 25,
+          backDelay: 1800,
+          loop: true
+        });
+      }
+      if (typeof AOS !== "undefined") {
+        AOS.init({ once: true, duration: 600 });
+      }
+    });
+  </script>
 
   <footer class="bg-slate-950 text-slate-300">
     <div class="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 md:grid-cols-2 lg:grid-cols-5 lg:px-8">
