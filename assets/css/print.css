@@ -1,30 +1,25 @@
 /* ==========================================================================
    iTu Solutions - Print Stylesheet (/assets/css/print.css)
-   Optimizes quotations, service summaries, and pages for clean printing.
+   Deployment base: https://itusolutions.github.io/updated-i-tu/
    ========================================================================== */
 
 @media print {
   @page {
-    margin: 1.5cm;
+    size: A4 portrait;
+    margin: 14mm;
   }
 
-  /* Hide interactive chrome, navigation, and non-printable UI */
-  header,
-  footer,
-  nav,
-  button,
-  [role="button"],
-  [data-theme-toggle],
-  #mobile-menu,
-  #mobile-menu-button,
-  .no-print {
-    display: none !important;
-  }
-
-  /* Reset layout width and dark mode backgrounds for paper output */
-  *,
-  *::before,
-  *::after {
+  /* Force light ink on white paper even when dark mode (.dark) is active */
+  html,
+  html.dark,
+  body,
+  .dark body,
+  main,
+  .dark main,
+  section,
+  article,
+  aside,
+  div {
     background: #ffffff !important;
     background-image: none !important;
     color: #0f172a !important;
@@ -34,62 +29,71 @@
 
   html,
   body {
-    width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    background: #ffffff !important;
-    color: #0f172a !important;
-    font-size: 12pt !important;
-    line-height: 1.5 !important;
+    font-size: 11pt !important;
+    line-height: 1.45 !important;
     overflow: visible !important;
   }
 
-  main,
-  section,
+  /* Hide interactive navigation, toggles, drawers, and non-print chrome */
+  header nav,
+  #mobile-menu,
+  #mobile-menu-button,
+  [data-theme-toggle],
+  [data-mega-panel],
+  [data-back-to-top],
+  .no-print {
+    display: none !important;
+  }
+
+  /* Keep header brand identity compact and clean on printed pages */
+  header {
+    position: static !important;
+    border-bottom: 1px solid #cbd5e1 !important;
+    padding-bottom: 8pt !important;
+    margin-bottom: 12pt !important;
+  }
+
+  /* Avoid awkward page breaks inside cards, tables, and headings */
+  h1, h2, h3, h4,
+  .break-inside-avoid,
   article,
-  aside {
-    max-width: 100% !important;
-    width: 100% !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+  aside,
+  table,
+  tr {
+    break-inside: avoid;
+    page-break-inside: avoid;
   }
 
-  /* Ensure AOS / fade animations do not leave elements invisible when printed */
-  [data-aos],
-  .anim-fade-up,
-  .anim-fade-in {
-    opacity: 1 !important;
-    transform: none !important;
-  }
-
-  /* Prevent awkward page splits inside blocks */
-  h1, h2, h3, h4, h5, h6 {
-    page-break-after: avoid;
+  h1, h2, h3 {
     break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  /* Show URLs for external links while keeping internal subpath links tidy */
+  a[href^="http"]:not([href*="itusolutions.github.io/updated-i-tu"])::after {
+    content: " (" attr(href) ")";
+    font-size: 8.5pt;
+    color: #475569;
+    word-break: break-all;
+  }
+
+  a[href^="mailto:"]::after,
+  a[href^="tel:"]::after {
+    content: " (" attr(href) ")";
+    font-size: 8.5pt;
+    color: #475569;
   }
 
   img,
-  svg,
-  table,
-  blockquote,
-  pre {
-    page-break-inside: avoid;
-    break-inside: avoid;
+  svg {
+    max-width: 100% !important;
+    height: auto !important;
   }
 
-  /* Show URLs for external links while keeping internal/relative links clean */
-  a[href^="http"]::after {
-    content: " (" attr(href) ")";
-    font-size: 0.85em;
-    font-weight: normal;
-    color: #334155 !important;
-  }
-
-  a[href^="#"]::after,
-  a[href^="/"]::after,
-  a[href^="mailto:"]::after,
-  a[href^="tel:"]::after,
-  a[href^="https://wa.me"]::after {
-    content: "" !important;
+  footer {
+    border-top: 1px solid #cbd5e1 !important;
+    margin-top: 16pt !important;
+    padding-top: 8pt !important;
+    font-size: 9pt !important;
   }
 }
