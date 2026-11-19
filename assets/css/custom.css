@@ -1,6 +1,7 @@
 /* ==========================================================================
    iTu Solutions - Custom Stylesheet (/assets/css/custom.css)
    Tailwind CSS v4 is the primary styling framework.
+   Deployment base: https://itusolutions.github.io/updated-i-tu/
    ========================================================================== */
 
 /* Enable class-based dark mode (.dark on <html>) for Tailwind v4 */
@@ -18,13 +19,18 @@
   html {
     font-family: var(--font-sans);
     scroll-behavior: smooth;
-    scroll-padding-top: 6.5rem;
+    scroll-padding-top: 7rem;
     text-size-adjust: 100%;
+    color-scheme: light;
+  }
+
+  html.dark {
+    color-scheme: dark;
   }
 
   body {
     font-family: var(--font-sans);
-    overflow-x: hidden;
+    overflow-x: clip;
   }
 
   code, pre, kbd, samp, .font-mono {
@@ -43,6 +49,19 @@
 }
 
 @layer components {
+  /* Keep top-level desktop/tablet navigation items visible and never hidden */
+  header nav[aria-label="Main navigation"] > div > a,
+  header nav[aria-label="Main navigation"] > div > div > a,
+  header nav[aria-label="Main navigation"] > div > div > button {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  /* Mega menu dropdown panel transition */
+  header [data-mega-panel] {
+    transition: opacity 0.16s ease, transform 0.16s ease, visibility 0.16s ease;
+  }
+
   /* Typed.js cursor & hero typing target */
   .typed-cursor {
     color: #4ade80;
