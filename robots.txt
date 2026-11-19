@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Disallow: /form/
+Sitemap: https://www.it-u.co.za/sitemap.xml
