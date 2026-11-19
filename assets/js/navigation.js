@@ -35,6 +35,10 @@
     const menu = document.getElementById("mobile-menu");
     if (!button || !menu) return;
 
+    function isMobileMenuOpen() {
+      return !menu.classList.contains("hidden") && button.getAttribute("aria-expanded") === "true";
+    }
+
     function setOpen(isOpen) {
       menu.classList.toggle("hidden", !isOpen);
       button.setAttribute("aria-expanded", String(isOpen));
@@ -44,10 +48,13 @@
       );
     }
 
+    // Ensure consistent initial closed state on load
+    setOpen(false);
+
     button.addEventListener("click", function (event) {
+      event.preventDefault();
       event.stopPropagation();
-      const isExpanded = button.getAttribute("aria-expanded") === "true";
-      setOpen(!isExpanded);
+      setOpen(!isMobileMenuOpen());
     });
 
     menu.addEventListener("click", function (event) {
@@ -58,15 +65,14 @@
     });
 
     document.addEventListener("click", function (event) {
-      const isExpanded = button.getAttribute("aria-expanded") === "true";
-      if (!isExpanded) return;
+      if (!isMobileMenuOpen()) return;
       if (!menu.contains(event.target) && !button.contains(event.target)) {
         setOpen(false);
       }
     });
 
     document.addEventListener("keydown", function (event) {
-      if (event.key === "Escape" && button.getAttribute("aria-expanded") === "true") {
+      if (event.key === "Escape" && isMobileMenuOpen()) {
         setOpen(false);
         button.focus();
       }
@@ -78,6 +84,7 @@
         setOpen(false);
       }
     };
+
     if (typeof desktopMedia.addEventListener === "function") {
       desktopMedia.addEventListener("change", handleViewportChange);
     } else if (typeof desktopMedia.addListener === "function") {
