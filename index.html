@@ -225,19 +225,24 @@
         </span>
       </a>
       
-        <!-- Right Actions: Theme Toggle -->
-      <button
-        id="themeToggle"
-        type="button"
-        data-theme-toggle
-        class="theme-toggle inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 text-slate-700 transition hover:bg-slate-100 dark:border-slate-800 dark:text-slate-200 dark:hover:bg-slate-800"
-        aria-label="Toggle Theme"
-        aria-pressed="false"
-      >
-        <i class="fas fa-sun text-lg light-icon dark:hidden" aria-hidden="true"></i>
-        <i class="fas fa-moon text-lg dark-icon hidden dark:inline-block" aria-hidden="true"></i>
-        <span class="sr-only">Toggle Theme</span>
-      </button>
+<button
+  id="themeToggle"
+  type="button"
+  data-theme-toggle
+  class="theme-toggle relative inline-flex h-10 w-10 cursor-pointer select-none items-center justify-center rounded-lg border border-slate-200 text-slate-700 transition hover:bg-slate-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 dark:border-slate-800 dark:text-slate-200 dark:hover:bg-slate-800"
+  aria-label="Toggle Theme"
+  aria-pressed="false"
+>
+  <i
+    class="fas fa-sun light-icon inline-block text-lg text-amber-500 transition-transform duration-150 group-active:scale-90 dark:hidden"
+    aria-hidden="true"
+  ></i>
+  <i
+    class="fas fa-moon dark-icon hidden text-lg text-blue-400 transition-transform duration-150 group-active:scale-90 dark:inline-block"
+    aria-hidden="true"
+  ></i>
+  <span class="sr-only">Toggle Theme</span>
+</button>
 
         <a href="https://itusolutions.github.io/updated-i-tu/form/contact-form/" class="hidden items-center gap-2 rounded-lg bg-green-600 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-green-700 md:inline-flex">
           <i class="fa-solid fa-screwdriver-wrench text-xs" aria-hidden="true"></i>
