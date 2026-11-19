@@ -1114,8 +1114,7 @@
     </section>
   </main>
 
-
-<footer class="border-t border-slate-800 bg-slate-950 text-slate-300">
+  <footer class="border-t border-slate-800 bg-slate-950 text-slate-300">
   <!-- Row 1: 5 Columns (Brand + Map | Quick Links | Popular Services | Connect | Subscribe) -->
   <div class="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 md:grid-cols-2 lg:grid-cols-5 lg:px-8">
     <!-- Column 1: Logo, Address & Map -->
@@ -1276,7 +1275,7 @@
         Get practical IT tips, repair guides, and updates from iTu Solutions.
       </p>
       <a
-        href="https://itusolutions.github.io/updated-i-tu/form/newsletter/index.html"
+        href="https://itusolutions.github.io/updated-i-tu/form/newsletter/"
         class="mt-4 inline-flex items-center gap-2 rounded-lg bg-yellow-400 px-4 py-2.5 text-sm font-bold text-slate-950 transition hover:bg-yellow-300"
       >
         <i class="fa-solid fa-envelope-open-text text-xs" aria-hidden="true"></i>
@@ -1352,7 +1351,7 @@
         <button
           type="button"
           onclick="if (window.history.length > 1) { window.history.back(); } else { window.location.href = 'https://itusolutions.github.io/updated-i-tu/'; }"
-          class="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-900 px-3.5 py-2 text-xs font-semibold text-slate-200 transition hover:border-blue-400 hover:text-blue-300"
+          class="inline-flex cursor-pointer items-center gap-2 rounded-lg border border-slate-700 bg-slate-900 px-3.5 py-2 text-xs font-semibold text-slate-200 transition hover:border-blue-400 hover:text-blue-300"
         >
           <i class="fa-solid fa-arrow-left text-xs text-blue-400" aria-hidden="true"></i>
           <span>Go back</span>
@@ -1377,18 +1376,18 @@
 
       <!-- Row 3, Col 3: Developer with Circular Dark & Light Logos -->
       <div class="flex items-center gap-2.5 md:justify-end">
-        <a href="https://itusolutions.github.io/updated-i-tu/about/" class="inline-flex items-center gap-2.5 text-slate-300 transition hover:text-lime-300">
-          <span class="inline-flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-full border border-slate-700 bg-slate-900 ring-1 ring-white/10">
+        <a href="https://itusolutions.github.io/updated-i-tu/about/" class="group inline-flex items-center gap-2.5 text-slate-300 transition hover:text-lime-300">
+          <span class="inline-flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded-full border border-slate-700 bg-slate-900 ring-1 ring-white/10 transition group-hover:border-lime-400/60">
             <img
               src="https://itusolutions.github.io/updated-i-tu/assets/logo/sekoala-logo-dark-mode.png"
               alt="Sekoala Daniel Bopape logo"
-              class="block h-full w-full rounded-full object-cover"
+              class="hidden h-full w-full rounded-full object-cover dark:block"
               loading="lazy"
             >
             <img
               src="https://itusolutions.github.io/updated-i-tu/assets/logo/sekoala-logo-light-mode.png"
               alt="Sekoala Daniel Bopape light logo"
-              class="hidden h-full w-full rounded-full object-cover"
+              class="block h-full w-full rounded-full object-cover dark:hidden"
               loading="lazy"
             >
           </span>
@@ -1398,6 +1397,8 @@
     </div>
   </div>
 </footer>
+
+  
 <!-- Core & UI Scripts (/assets/js/) -->
   <script src="https://itusolutions.github.io/updated-i-tu/assets/js/toggle.js" defer></script>
   <script src="https://itusolutions.github.io/updated-i-tu/assets/js/main.js" defer></script>
