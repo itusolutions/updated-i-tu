@@ -1,4 +1,86 @@
-@media (prefers-reduced-motion: no-preference) {
-  .reveal { animation: reveal .5s ease both; }
-  @keyframes reveal { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+/* ==========================================================================
+   iTu Solutions - Animations Stylesheet (/assets/css/animations.css)
+   Complements Tailwind CSS v4, Animate.css, and AOS.
+   ========================================================================== */
+
+@layer components {
+  /* Subtle floating motion for hero & service SVG illustrations */
+  .anim-float {
+    animation: ituFloat 4.5s ease-in-out infinite;
+  }
+
+  .anim-float-slow {
+    animation: ituFloat 7s ease-in-out infinite;
+  }
+
+  /* Gentle pulse glow for status badges & callouts */
+  .anim-pulse-soft {
+    animation: ituPulseSoft 2.6s ease-in-out infinite;
+  }
+
+  /* Smooth entrance helpers */
+  .anim-fade-up {
+    animation: ituFadeUp 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .anim-fade-in {
+    animation: ituFadeIn 0.45s ease-out both;
+  }
+
+  /* Stagger delays for card grids */
+  .anim-delay-100 { animation-delay: 100ms; }
+  .anim-delay-200 { animation-delay: 200ms; }
+  .anim-delay-300 { animation-delay: 300ms; }
+  .anim-delay-400 { animation-delay: 400ms; }
+}
+
+@keyframes ituFloat {
+  0%, 100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -8px, 0);
+  }
+}
+
+@keyframes ituPulseSoft {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.78;
+    transform: scale(0.985);
+  }
+}
+
+@keyframes ituFadeUp {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 14px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes ituFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .anim-float,
+  .anim-float-slow,
+  .anim-pulse-soft,
+  .anim-fade-up,
+  .anim-fade-in {
+    animation: none !important;
+  }
 }
