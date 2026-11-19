@@ -1,107 +1,67 @@
 (function () {
-  function setPanelOpen(trigger, panel, open, instant) {
-    if (!trigger || !panel) return;
-
-    trigger.setAttribute("aria-expanded", String(open));
-    panel.dataset.open = String(open);
-
-    const icon = trigger.querySelector("[data-accordion-icon]");
-    if (icon) {
-      icon.classList.toggle("rotate-180", open);
+  function getPanel(trigger) {
+    var controlsId = trigger.getAttribute("aria-controls");
+    if (controlsId) {
+      var byId = document.getElementById(controlsId);
+      if (byId) return byId;
     }
 
-    if (instant) {
-      panel.style.transition = "none";
+    if (trigger.nextElementSibling && trigger.nextElementSibling.hasAttribute("data-accordion-panel")) {
+      return trigger.nextElementSibling;
     }
 
-    if (open) {
-      panel.classList.remove("hidden");
-      panel.style.maxHeight = panel.scrollHeight + "px";
-      panel.style.opacity = "1";
-    } else {
-      panel.style.maxHeight = panel.scrollHeight + "px";
-      void panel.offsetHeight; // Force reflow before collapsing
-      panel.style.maxHeight = "0px";
-      panel.style.opacity = "0";
-
-      if (instant) {
-        panel.classList.add("hidden");
-      } else {
-        window.setTimeout(function () {
-          if (panel.dataset.open !== "true") {
-            panel.classList.add("hidden");
-          }
-        }, 260);
-      }
-    }
-
-    if (instant) {
-      void panel.offsetHeight;
-      panel.style.transition = "";
-    }
+    var parent = trigger.parentElement;
+    return parent ? parent.querySelector("[data-accordion-panel]") : null;
   }
 
-  function findPanelForTrigger(trigger) {
-    const panelId = trigger.getAttribute("aria-controls") || trigger.getAttribute("data-accordion-target");
-    if (panelId) {
-      return document.getElementById(panelId.replace(/^#/, ""));
+  function syncTriggerState(trigger, panel, isOpen) {
+    trigger.setAttribute("aria-expanded", String(isOpen));
+    if (panel) {
+      panel.classList.toggle("hidden", !isOpen);
     }
 
-    const container = trigger.closest("[data-accordion-item]") || trigger.parentElement;
-    return container ? container.querySelector("[data-accordion-panel]") : null;
+    var chevron =
+      trigger.querySelector("[data-accordion-chevron]") ||
+      trigger.querySelector(".fa-chevron-down, .fa-chevron-up, .bx-chevron-down");
+    if (chevron) {
+      chevron.classList.toggle("rotate-180", isOpen);
+    }
   }
 
   function initAccordions() {
-    const triggers = Array.from(document.querySelectorAll("[data-accordion-trigger]"));
+    var triggers = Array.from(document.querySelectorAll("[data-accordion-trigger]"));
     if (!triggers.length) return;
 
-    triggers.forEach((trigger, index) => {
-      const panel = findPanelForTrigger(trigger);
-      if (!panel) return;
+    triggers.forEach(function (trigger) {
+      if (trigger.dataset.accordionBound === "true") return;
+      trigger.dataset.accordionBound = "true";
 
-      if (!trigger.id) {
-        trigger.id = "accordion-trigger-" + (index + 1);
-      }
-      if (!panel.id) {
-        panel.id = "accordion-panel-" + (index + 1);
-      }
+      var panel = getPanel(trigger);
+      var initiallyOpen = trigger.getAttribute("aria-expanded") === "true";
+      syncTriggerState(trigger, panel, initiallyOpen);
 
-      trigger.setAttribute("aria-controls", panel.id);
-      panel.setAttribute("aria-labelledby", trigger.id);
+      trigger.addEventListener("click", function (event) {
+        event.preventDefault();
+        event.stopPropagation();
 
-      const startsOpen =
-        trigger.getAttribute("aria-expanded") === "true" ||
-        trigger.getAttribute("data-accordion-open") === "true";
+        var currentlyOpen = trigger.getAttribute("aria-expanded") === "true";
+        var nextOpen = !currentlyOpen;
+        var groupName = trigger.getAttribute("data-accordion-group");
 
-      setPanelOpen(trigger, panel, startsOpen, true);
-
-      trigger.addEventListener("click", function () {
-        const isOpen = trigger.getAttribute("aria-expanded") === "true";
-        const nextOpen = !isOpen;
-        const group = trigger.closest("[data-accordion-group]");
-
-        if (nextOpen && group && group.getAttribute("data-accordion-single") === "true") {
-          group.querySelectorAll("[data-accordion-trigger]").forEach((otherTrigger) => {
-            if (otherTrigger !== trigger) {
-              const otherPanel = findPanelForTrigger(otherTrigger);
-              setPanelOpen(otherTrigger, otherPanel, false, false);
+        if (nextOpen && groupName) {
+          triggers.forEach(function (otherTrigger) {
+            if (
+              otherTrigger !== trigger &&
+              otherTrigger.getAttribute("data-accordion-group") === groupName
+            ) {
+              syncTriggerState(otherTrigger, getPanel(otherTrigger), false);
             }
           });
         }
 
-        setPanelOpen(trigger, panel, nextOpen, false);
+        syncTriggerState(trigger, panel, nextOpen);
       });
     });
-
-    window.addEventListener(
-      "resize",
-      function () {
-        document.querySelectorAll('[data-accordion-panel][data-open="true"]').forEach((panel) => {
-          panel.style.maxHeight = panel.scrollHeight + "px";
-        });
-      },
-      { passive: true }
-    );
   }
 
   if (document.readyState === "loading") {
