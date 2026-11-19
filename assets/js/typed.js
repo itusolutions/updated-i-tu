@@ -1,5 +1,4 @@
 <!-- Typed.js & AOS Initialization -->
-  <script>
     document.addEventListener("DOMContentLoaded", function () {
       if (typeof Typed !== "undefined" && document.getElementById("hero-typed")) {
         new Typed("#hero-typed", {
@@ -19,4 +18,4 @@
         AOS.init({ once: true, duration: 600 });
       }
     });
-  </script>
+
