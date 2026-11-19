@@ -258,112 +258,429 @@
     <!-- Desktop Navigation & Mega Menu -->
     <nav aria-label="Main navigation" class="hidden border-t border-slate-100 dark:border-slate-800 md:block">
       <div class="mx-auto flex max-w-7xl items-center justify-center gap-1 px-4">
-        <a class="rounded-lg px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-blue-50 hover:text-blue-700 dark:text-slate-200 dark:hover:bg-slate-900 dark:hover:text-blue-400" href="https://itusolutions.github.io/updated-i-tu/">Home</a>
-        <a class="rounded-lg px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-blue-50 hover:text-blue-700 dark:text-slate-200 dark:hover:bg-slate-900 dark:hover:text-blue-400" href="https://itusolutions.github.io/updated-i-tu/about/">About</a>
+        <a class="inline-flex items-center gap-1.5 rounded-lg px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-blue-50 hover:text-blue-700 dark:text-slate-200 dark:hover:bg-slate-900 dark:hover:text-blue-400" href="https://itusolutions.github.io/updated-i-tu/">
+          <i class="fa-solid fa-house text-xs text-slate-400" aria-hidden="true"></i>
+          <span>Home</span>
+        </a>
 
+        <a class="inline-flex items-center gap-1.5 rounded-lg px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-blue-50 hover:text-blue-700 dark:text-slate-200 dark:hover:bg-slate-900 dark:hover:text-blue-400" href="https://itusolutions.github.io/updated-i-tu/about/">
+          <i class="fa-solid fa-circle-info text-xs text-slate-400" aria-hidden="true"></i>
+          <span>About</span>
+        </a>
+
+        <!-- Services Mega Menu -->
         <div class="group relative">
-          <a href="https://itusolutions.github.io/updated-i-tu/services/" class="inline-flex items-center gap-1 rounded-lg px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-blue-50 hover:text-blue-700 focus:bg-blue-50 dark:text-slate-200 dark:hover:bg-slate-900 dark:hover:text-blue-400">
+          <a href="https://itusolutions.github.io/updated-i-tu/services/" class="inline-flex items-center gap-1.5 rounded-lg px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-blue-50 hover:text-blue-700 focus:bg-blue-50 dark:text-slate-200 dark:hover:bg-slate-900 dark:hover:text-blue-400">
+            <i class="fa-solid fa-screwdriver-wrench text-xs text-green-600 dark:text-green-400" aria-hidden="true"></i>
             <span>Services</span>
             <i class="fa-solid fa-chevron-down text-[10px]" aria-hidden="true"></i>
           </a>
-          <div class="invisible absolute left-1/2 top-full z-50 w-[min(92vw,900px)] -translate-x-1/2 translate-y-2 rounded-2xl border border-slate-200 bg-white p-6 opacity-0 shadow-2xl transition duration-150 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100 dark:border-slate-800 dark:bg-slate-900">
-            <div class="grid grid-cols-3 gap-6">
+
+          <div data-mega-panel class="invisible absolute left-1/2 top-full z-50 w-[min(95vw,1060px)] -translate-x-1/2 translate-y-2 rounded-2xl border border-slate-200 bg-white p-6 opacity-0 shadow-2xl transition duration-150 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100 dark:border-slate-800 dark:bg-slate-900">
+            <div class="grid gap-6 lg:grid-cols-[repeat(3,minmax(0,1fr))_240px]">
+              <!-- Column 1: Computer Services -->
               <div>
                 <p class="mb-3 flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-green-700 dark:text-green-400">
                   <i class="fa-solid fa-laptop" aria-hidden="true"></i>
                   <span>Computer services</span>
                 </p>
-                <a class="block rounded-lg px-3 py-2 text-sm text-slate-700 transition hover:bg-blue-50 hover:text-blue-700 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400" href="https://itusolutions.github.io/updated-i-tu/services/computer-services/">Computer Services</a>
-                <a class="block rounded-lg px-3 py-2 text-sm text-slate-700 transition hover:bg-blue-50 hover:text-blue-700 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400" href="https://itusolutions.github.io/updated-i-tu/services/computer-repairs/">Computer Repairs</a>
-                <a class="block rounded-lg px-3 py-2 text-sm text-slate-700 transition hover:bg-blue-50 hover:text-blue-700 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400" href="https://itusolutions.github.io/updated-i-tu/services/laptop-repairs/">Laptop &amp; Desktop Repairs</a>
-                <a class="block rounded-lg px-3 py-2 text-sm text-slate-700 transition hover:bg-blue-50 hover:text-blue-700 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400" href="https://itusolutions.github.io/updated-i-tu/services/hardware-upgrades/">Hardware Upgrades</a>
-                <a class="block rounded-lg px-3 py-2 text-sm text-slate-700 transition hover:bg-blue-50 hover:text-blue-700 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400" href="https://itusolutions.github.io/updated-i-tu/services/operating-system-installation/">Operating System Installation</a>
-                <a class="block rounded-lg px-3 py-2 text-sm text-slate-700 transition hover:bg-blue-50 hover:text-blue-700 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400" href="https://itusolutions.github.io/updated-i-tu/services/software-installation/">Software Installation</a>
+                <div class="space-y-1">
+                  <a class="block rounded-lg px-3 py-2 transition hover:bg-blue-50 dark:hover:bg-slate-800" href="https://itusolutions.github.io/updated-i-tu/services/computer-services/">
+                    <span class="flex items-center gap-2 text-sm font-semibold text-slate-800 hover:text-blue-700 dark:text-slate-200 dark:hover:text-blue-400">
+                      <i class="fa-solid fa-desktop w-4 text-center text-xs text-green-600 dark:text-green-400" aria-hidden="true"></i>
+                      <span>Computer Services</span>
+                    </span>
+                    <span class="mt-0.5 block pl-6 text-xs leading-4 text-slate-500 dark:text-slate-400">
+                      Diagnostics, tune-ups and everyday maintenance.
+                    </span>
+                  </a>
+
+                  <a class="block rounded-lg px-3 py-2 transition hover:bg-blue-50 dark:hover:bg-slate-800" href="https://itusolutions.github.io/updated-i-tu/services/computer-repairs/">
+                    <span class="flex items-center gap-2 text-sm font-semibold text-slate-800 hover:text-blue-700 dark:text-slate-200 dark:hover:text-blue-400">
+                      <i class="fa-solid fa-wrench w-4 text-center text-xs text-green-600 dark:text-green-400" aria-hidden="true"></i>
+                      <span>Computer Repairs</span>
+                    </span>
+                    <span class="mt-0.5 block pl-6 text-xs leading-4 text-slate-500 dark:text-slate-400">
+                      Fault finding and practical fixes for faulty systems.
+                    </span>
+                  </a>
+
+                  <a class="block rounded-lg px-3 py-2 transition hover:bg-blue-50 dark:hover:bg-slate-800" href="https://itusolutions.github.io/updated-i-tu/services/laptop-repairs/">
+                    <span class="flex items-center gap-2 text-sm font-semibold text-slate-800 hover:text-blue-700 dark:text-slate-200 dark:hover:text-blue-400">
+                      <i class="fa-solid fa-laptop-medical w-4 text-center text-xs text-green-600 dark:text-green-400" aria-hidden="true"></i>
+                      <span>Laptop &amp; Desktop Repairs</span>
+                    </span>
+                    <span class="mt-0.5 block pl-6 text-xs leading-4 text-slate-500 dark:text-slate-400">
+                      Power, display, cooling and component troubleshooting.
+                    </span>
+                  </a>
+
+                  <a class="block rounded-lg px-3 py-2 transition hover:bg-blue-50 dark:hover:bg-slate-800" href="https://itusolutions.github.io/updated-i-tu/services/hardware-upgrades/">
+                    <span class="flex items-center gap-2 text-sm font-semibold text-slate-800 hover:text-blue-700 dark:text-slate-200 dark:hover:text-blue-400">
+                      <i class="fa-solid fa-memory w-4 text-center text-xs text-green-600 dark:text-green-400" aria-hidden="true"></i>
+                      <span>Hardware Upgrades</span>
+                    </span>
+                    <span class="mt-0.5 block pl-6 text-xs leading-4 text-slate-500 dark:text-slate-400">
+                      SSD, RAM and storage upgrades for faster performance.
+                    </span>
+                  </a>
+
+                  <a class="block rounded-lg px-3 py-2 transition hover:bg-blue-50 dark:hover:bg-slate-800" href="https://itusolutions.github.io/updated-i-tu/services/operating-system-installation/">
+                    <span class="flex items-center gap-2 text-sm font-semibold text-slate-800 hover:text-blue-700 dark:text-slate-200 dark:hover:text-blue-400">
+                      <i class="fa-brands fa-windows w-4 text-center text-xs text-green-600 dark:text-green-400" aria-hidden="true"></i>
+                      <span>Operating System Installation</span>
+                    </span>
+                    <span class="mt-0.5 block pl-6 text-xs leading-4 text-slate-500 dark:text-slate-400">
+                      Clean OS installs, updates and essential driver setup.
+                    </span>
+                  </a>
+
+                  <a class="block rounded-lg px-3 py-2 transition hover:bg-blue-50 dark:hover:bg-slate-800" href="https://itusolutions.github.io/updated-i-tu/services/software-installation/">
+                    <span class="flex items-center gap-2 text-sm font-semibold text-slate-800 hover:text-blue-700 dark:text-slate-200 dark:hover:text-blue-400">
+                      <i class="fa-solid fa-download w-4 text-center text-xs text-green-600 dark:text-green-400" aria-hidden="true"></i>
+                      <span>Software Installation</span>
+                    </span>
+                    <span class="mt-0.5 block pl-6 text-xs leading-4 text-slate-500 dark:text-slate-400">
+                      Productivity tools, utilities and licensed applications.
+                    </span>
+                  </a>
+                </div>
               </div>
 
+              <!-- Column 2: IT Support -->
               <div>
                 <p class="mb-3 flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-blue-700 dark:text-blue-400">
                   <i class="fa-solid fa-network-wired" aria-hidden="true"></i>
                   <span>IT support</span>
                 </p>
-                <a class="block rounded-lg px-3 py-2 text-sm text-slate-700 transition hover:bg-blue-50 hover:text-blue-700 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400" href="https://itusolutions.github.io/updated-i-tu/services/it-support/">IT Support</a>
-                <a class="block rounded-lg px-3 py-2 text-sm text-slate-700 transition hover:bg-blue-50 hover:text-blue-700 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400" href="https://itusolutions.github.io/updated-i-tu/services/networking/">Networking &amp; Wi-Fi</a>
-                <a class="block rounded-lg px-3 py-2 text-sm text-slate-700 transition hover:bg-blue-50 hover:text-blue-700 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400" href="https://itusolutions.github.io/updated-i-tu/services/cybersecurity/">Cybersecurity Assistance</a>
-                <a class="block rounded-lg px-3 py-2 text-sm text-slate-700 transition hover:bg-blue-50 hover:text-blue-700 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400" href="https://itusolutions.github.io/updated-i-tu/services/wifi-installation/">Wi-Fi Installation</a>
-                <a class="block rounded-lg px-3 py-2 text-sm text-slate-700 transition hover:bg-blue-50 hover:text-blue-700 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400" href="https://itusolutions.github.io/updated-i-tu/services/printer-setup/">Printer Setup</a>
-                <a class="block rounded-lg px-3 py-2 text-sm text-slate-700 transition hover:bg-blue-50 hover:text-blue-700 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400" href="https://itusolutions.github.io/updated-i-tu/services/data-backup-recovery/">Data Backup &amp; Recovery</a>
+                <div class="space-y-1">
+                  <a class="block rounded-lg px-3 py-2 transition hover:bg-blue-50 dark:hover:bg-slate-800" href="https://itusolutions.github.io/updated-i-tu/services/it-support/">
+                    <span class="flex items-center gap-2 text-sm font-semibold text-slate-800 hover:text-blue-700 dark:text-slate-200 dark:hover:text-blue-400">
+                      <i class="fa-solid fa-headset w-4 text-center text-xs text-blue-600 dark:text-blue-400" aria-hidden="true"></i>
+                      <span>IT Support</span>
+                    </span>
+                    <span class="mt-0.5 block pl-6 text-xs leading-4 text-slate-500 dark:text-slate-400">
+                      Hands-on help for home users, students and offices.
+                    </span>
+                  </a>
+
+                  <a class="block rounded-lg px-3 py-2 transition hover:bg-blue-50 dark:hover:bg-slate-800" href="https://itusolutions.github.io/updated-i-tu/services/networking/">
+                    <span class="flex items-center gap-2 text-sm font-semibold text-slate-800 hover:text-blue-700 dark:text-slate-200 dark:hover:text-blue-400">
+                      <i class="fa-solid fa-wifi w-4 text-center text-xs text-blue-600 dark:text-blue-400" aria-hidden="true"></i>
+                      <span>Networking &amp; Wi-Fi</span>
+                    </span>
+                    <span class="mt-0.5 block pl-6 text-xs leading-4 text-slate-500 dark:text-slate-400">
+                      Routers, switches, signal coverage and local connections.
+                    </span>
+                  </a>
+
+                  <a class="block rounded-lg px-3 py-2 transition hover:bg-blue-50 dark:hover:bg-slate-800" href="https://itusolutions.github.io/updated-i-tu/services/cybersecurity/">
+                    <span class="flex items-center gap-2 text-sm font-semibold text-slate-800 hover:text-blue-700 dark:text-slate-200 dark:hover:text-blue-400">
+                      <i class="fa-solid fa-shield-halved w-4 text-center text-xs text-blue-600 dark:text-blue-400" aria-hidden="true"></i>
+                      <span>Cybersecurity Assistance</span>
+                    </span>
+                    <span class="mt-0.5 block pl-6 text-xs leading-4 text-slate-500 dark:text-slate-400">
+                      Malware cleanup, account safety and basic protection.
+                    </span>
+                  </a>
+
+                  <a class="block rounded-lg px-3 py-2 transition hover:bg-blue-50 dark:hover:bg-slate-800" href="https://itusolutions.github.io/updated-i-tu/services/wifi-installation/">
+                    <span class="flex items-center gap-2 text-sm font-semibold text-slate-800 hover:text-blue-700 dark:text-slate-200 dark:hover:text-blue-400">
+                      <i class="fa-solid fa-router w-4 text-center text-xs text-blue-600 dark:text-blue-400" aria-hidden="true"></i>
+                      <span>Wi-Fi Installation</span>
+                    </span>
+                    <span class="mt-0.5 block pl-6 text-xs leading-4 text-slate-500 dark:text-slate-400">
+                      Clean wireless configuration for homes and workplaces.
+                    </span>
+                  </a>
+
+                  <a class="block rounded-lg px-3 py-2 transition hover:bg-blue-50 dark:hover:bg-slate-800" href="https://itusolutions.github.io/updated-i-tu/services/printer-setup/">
+                    <span class="flex items-center gap-2 text-sm font-semibold text-slate-800 hover:text-blue-700 dark:text-slate-200 dark:hover:text-blue-400">
+                      <i class="fa-solid fa-print w-4 text-center text-xs text-blue-600 dark:text-blue-400" aria-hidden="true"></i>
+                      <span>Printer Setup</span>
+                    </span>
+                    <span class="mt-0.5 block pl-6 text-xs leading-4 text-slate-500 dark:text-slate-400">
+                      USB and network printer installation and sharing.
+                    </span>
+                  </a>
+
+                  <a class="block rounded-lg px-3 py-2 transition hover:bg-blue-50 dark:hover:bg-slate-800" href="https://itusolutions.github.io/updated-i-tu/services/data-backup-recovery/">
+                    <span class="flex items-center gap-2 text-sm font-semibold text-slate-800 hover:text-blue-700 dark:text-slate-200 dark:hover:text-blue-400">
+                      <i class="fa-solid fa-hard-drive w-4 text-center text-xs text-blue-600 dark:text-blue-400" aria-hidden="true"></i>
+                      <span>Data Backup &amp; Recovery</span>
+                    </span>
+                    <span class="mt-0.5 block pl-6 text-xs leading-4 text-slate-500 dark:text-slate-400">
+                      Safeguard important files and recover accessible data.
+                    </span>
+                  </a>
+                </div>
               </div>
 
+              <!-- Column 3: Web Development -->
               <div>
                 <p class="mb-3 flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-orange-700 dark:text-orange-400">
                   <i class="fa-solid fa-code" aria-hidden="true"></i>
                   <span>Web development</span>
                 </p>
-                <a class="block rounded-lg px-3 py-2 text-sm text-slate-700 transition hover:bg-blue-50 hover:text-blue-700 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400" href="https://itusolutions.github.io/updated-i-tu/services/website-development/">Website Development</a>
-                <a class="block rounded-lg px-3 py-2 text-sm text-slate-700 transition hover:bg-blue-50 hover:text-blue-700 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400" href="https://itusolutions.github.io/updated-i-tu/services/company-websites/">Company Websites</a>
-                <a class="block rounded-lg px-3 py-2 text-sm text-slate-700 transition hover:bg-blue-50 hover:text-blue-700 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400" href="https://itusolutions.github.io/updated-i-tu/services/personal-websites/">Personal &amp; Portfolio Websites</a>
+                <div class="space-y-1">
+                  <a class="block rounded-lg px-3 py-2 transition hover:bg-blue-50 dark:hover:bg-slate-800" href="https://itusolutions.github.io/updated-i-tu/services/website-development/">
+                    <span class="flex items-center gap-2 text-sm font-semibold text-slate-800 hover:text-blue-700 dark:text-slate-200 dark:hover:text-blue-400">
+                      <i class="fa-solid fa-globe w-4 text-center text-xs text-orange-600 dark:text-orange-400" aria-hidden="true"></i>
+                      <span>Website Development</span>
+                    </span>
+                    <span class="mt-0.5 block pl-6 text-xs leading-4 text-slate-500 dark:text-slate-400">
+                      Responsive, mobile-friendly websites built for clarity.
+                    </span>
+                  </a>
+
+                  <a class="block rounded-lg px-3 py-2 transition hover:bg-blue-50 dark:hover:bg-slate-800" href="https://itusolutions.github.io/updated-i-tu/services/company-websites/">
+                    <span class="flex items-center gap-2 text-sm font-semibold text-slate-800 hover:text-blue-700 dark:text-slate-200 dark:hover:text-blue-400">
+                      <i class="fa-solid fa-building w-4 text-center text-xs text-orange-600 dark:text-orange-400" aria-hidden="true"></i>
+                      <span>Company Websites</span>
+                    </span>
+                    <span class="mt-0.5 block pl-6 text-xs leading-4 text-slate-500 dark:text-slate-400">
+                      Credible business presence with clear service pages.
+                    </span>
+                  </a>
+
+                  <a class="block rounded-lg px-3 py-2 transition hover:bg-blue-50 dark:hover:bg-slate-800" href="https://itusolutions.github.io/updated-i-tu/services/personal-websites/">
+                    <span class="flex items-center gap-2 text-sm font-semibold text-slate-800 hover:text-blue-700 dark:text-slate-200 dark:hover:text-blue-400">
+                      <i class="fa-solid fa-id-card w-4 text-center text-xs text-orange-600 dark:text-orange-400" aria-hidden="true"></i>
+                      <span>Personal &amp; Portfolio Websites</span>
+                    </span>
+                    <span class="mt-0.5 block pl-6 text-xs leading-4 text-slate-500 dark:text-slate-400">
+                      Showcase work, profiles and digital resumes cleanly.
+                    </span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Column 4: Featured Mega Menu Visual Card -->
+              <div class="flex flex-col justify-between rounded-xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-950/70">
+                <div>
+                  <img
+                    src="https://itusolutions.github.io/updated-i-tu/assets/images/website-development.svg"
+                    alt="iTu Solutions IT support and website development preview"
+                    class="h-32 w-full rounded-lg bg-white p-2 object-contain dark:bg-slate-900"
+                    loading="lazy"
+                  >
+                  <p class="mt-3 text-xs font-bold uppercase tracking-wider text-blue-700 dark:text-blue-400">
+                    Polokwane &amp; Ga-Mothiba
+                  </p>
+                  <h3 class="mt-1 text-sm font-extrabold text-slate-900 dark:text-white">
+                    Practical IT &amp; Web Help
+                  </h3>
+                  <p class="mt-1.5 text-xs leading-5 text-slate-600 dark:text-slate-400">
+                    Clear diagnostics, honest recommendations and responsive websites tailored to your goals.
+                  </p>
+                </div>
+                <a href="https://itusolutions.github.io/updated-i-tu/form/contact-form/" class="mt-4 inline-flex items-center justify-center gap-1.5 rounded-lg bg-blue-600 px-3 py-2 text-xs font-bold text-white transition hover:bg-blue-700">
+                  <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+                  <span>Request a quote</span>
+                </a>
               </div>
             </div>
-            <div class="mt-5 border-t border-slate-100 pt-4 dark:border-slate-800">
+
+            <div class="mt-5 flex flex-wrap items-center justify-between gap-2 border-t border-slate-100 pt-4 dark:border-slate-800">
               <a href="https://itusolutions.github.io/updated-i-tu/services/" class="inline-flex items-center gap-1.5 text-sm font-bold text-blue-700 hover:underline dark:text-blue-400">
                 <span>Explore all services</span>
                 <i class="fa-solid fa-arrow-right text-xs" aria-hidden="true"></i>
+              </a>
+              <span class="text-xs text-slate-500 dark:text-slate-400">
+                On-site &amp; remote guidance in Limpopo
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Solutions Dropdown -->
+        <div class="group relative">
+          <a href="https://itusolutions.github.io/updated-i-tu/solutions/" class="inline-flex items-center gap-1.5 rounded-lg px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-blue-50 hover:text-blue-700 dark:text-slate-200 dark:hover:bg-slate-900 dark:hover:text-blue-400">
+            <i class="fa-solid fa-layer-group text-xs text-blue-600 dark:text-blue-400" aria-hidden="true"></i>
+            <span>Solutions</span>
+            <i class="fa-solid fa-chevron-down text-[10px]" aria-hidden="true"></i>
+          </a>
+
+          <div data-mega-panel class="invisible absolute left-1/2 top-full z-50 w-80 -translate-x-1/2 translate-y-2 rounded-2xl border border-slate-200 bg-white p-4 opacity-0 shadow-2xl transition duration-150 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100 dark:border-slate-800 dark:bg-slate-900">
+            <img
+              src="https://itusolutions.github.io/updated-i-tu/assets/images/it-support.svg"
+              alt="Tailored IT solutions illustration"
+              class="mb-3 h-24 w-full rounded-lg bg-slate-50 p-2 object-contain dark:bg-slate-950"
+              loading="lazy"
+            >
+            <div class="space-y-1">
+              <a class="block rounded-lg px-3 py-2 transition hover:bg-blue-50 dark:hover:bg-slate-800" href="https://itusolutions.github.io/updated-i-tu/solutions/home-users/">
+                <span class="flex items-center gap-2 text-sm font-semibold text-slate-800 hover:text-blue-700 dark:text-slate-200 dark:hover:text-blue-400">
+                  <i class="fa-solid fa-house-user w-4 text-center text-xs text-blue-600 dark:text-blue-400" aria-hidden="true"></i>
+                  <span>Home Users</span>
+                </span>
+                <span class="mt-0.5 block pl-6 text-xs leading-4 text-slate-500 dark:text-slate-400">
+                  Everyday repairs, Wi-Fi, printers and safe backups.
+                </span>
+              </a>
+
+              <a class="block rounded-lg px-3 py-2 transition hover:bg-blue-50 dark:hover:bg-slate-800" href="https://itusolutions.github.io/updated-i-tu/solutions/small-businesses/">
+                <span class="flex items-center gap-2 text-sm font-semibold text-slate-800 hover:text-blue-700 dark:text-slate-200 dark:hover:text-blue-400">
+                  <i class="fa-solid fa-store w-4 text-center text-xs text-blue-600 dark:text-blue-400" aria-hidden="true"></i>
+                  <span>Small Businesses</span>
+                </span>
+                <span class="mt-0.5 block pl-6 text-xs leading-4 text-slate-500 dark:text-slate-400">
+                  Reliable work devices, networks and company websites.
+                </span>
+              </a>
+
+              <a class="block rounded-lg px-3 py-2 transition hover:bg-blue-50 dark:hover:bg-slate-800" href="https://itusolutions.github.io/updated-i-tu/solutions/students/">
+                <span class="flex items-center gap-2 text-sm font-semibold text-slate-800 hover:text-blue-700 dark:text-slate-200 dark:hover:text-blue-400">
+                  <i class="fa-solid fa-graduation-cap w-4 text-center text-xs text-blue-600 dark:text-blue-400" aria-hidden="true"></i>
+                  <span>Students</span>
+                </span>
+                <span class="mt-0.5 block pl-6 text-xs leading-4 text-slate-500 dark:text-slate-400">
+                  Study laptops, software setup and assignment file safety.
+                </span>
+              </a>
+
+              <a class="block rounded-lg px-3 py-2 transition hover:bg-blue-50 dark:hover:bg-slate-800" href="https://itusolutions.github.io/updated-i-tu/solutions/organisations/">
+                <span class="flex items-center gap-2 text-sm font-semibold text-slate-800 hover:text-blue-700 dark:text-slate-200 dark:hover:text-blue-400">
+                  <i class="fa-solid fa-sitemap w-4 text-center text-xs text-blue-600 dark:text-blue-400" aria-hidden="true"></i>
+                  <span>Organisations</span>
+                </span>
+                <span class="mt-0.5 block pl-6 text-xs leading-4 text-slate-500 dark:text-slate-400">
+                  Structured IT support and multi-page web presence.
+                </span>
               </a>
             </div>
           </div>
         </div>
 
-        <div class="group relative">
-          <a href="https://itusolutions.github.io/updated-i-tu/solutions/" class="inline-flex items-center gap-1 rounded-lg px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-blue-50 hover:text-blue-700 dark:text-slate-200 dark:hover:bg-slate-900 dark:hover:text-blue-400">
-            <span>Solutions</span>
-            <i class="fa-solid fa-chevron-down text-[10px]" aria-hidden="true"></i>
-          </a>
-          <div class="invisible absolute left-1/2 top-full z-50 w-72 -translate-x-1/2 translate-y-2 rounded-2xl border border-slate-200 bg-white p-4 opacity-0 shadow-2xl transition group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100 dark:border-slate-800 dark:bg-slate-900">
-            <a class="block rounded-lg px-3 py-2 text-sm text-slate-700 transition hover:bg-blue-50 hover:text-blue-700 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400" href="https://itusolutions.github.io/updated-i-tu/solutions/home-users/">Home Users</a>
-            <a class="block rounded-lg px-3 py-2 text-sm text-slate-700 transition hover:bg-blue-50 hover:text-blue-700 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400" href="https://itusolutions.github.io/updated-i-tu/solutions/small-businesses/">Small Businesses</a>
-            <a class="block rounded-lg px-3 py-2 text-sm text-slate-700 transition hover:bg-blue-50 hover:text-blue-700 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400" href="https://itusolutions.github.io/updated-i-tu/solutions/students/">Students</a>
-            <a class="block rounded-lg px-3 py-2 text-sm text-slate-700 transition hover:bg-blue-50 hover:text-blue-700 dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-blue-400" href="https://itusolutions.github.io/updated-i-tu/solutions/organisations/">Organisations</a>
-          </div>
-        </div>
+        <a class="inline-flex items-center gap-1.5 rounded-lg px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-blue-50 hover:text-blue-700 dark:text-slate-200 dark:hover:bg-slate-900 dark:hover:text-blue-400" href="https://itusolutions.github.io/updated-i-tu/pricing/">
+          <i class="fa-solid fa-tags text-xs text-slate-400" aria-hidden="true"></i>
+          <span>Pricing</span>
+        </a>
 
-        <a class="rounded-lg px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-blue-50 hover:text-blue-700 dark:text-slate-200 dark:hover:bg-slate-900 dark:hover:text-blue-400" href="https://itusolutions.github.io/updated-i-tu/pricing/">Pricing</a>
-        <a class="rounded-lg px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-blue-50 hover:text-blue-700 dark:text-slate-200 dark:hover:bg-slate-900 dark:hover:text-blue-400" href="https://itusolutions.github.io/updated-i-tu/portfolio/">Portfolio</a>
-        <a class="rounded-lg px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-blue-50 hover:text-blue-700 dark:text-slate-200 dark:hover:bg-slate-900 dark:hover:text-blue-400" href="https://itusolutions.github.io/updated-i-tu/blog/">Blog</a>
-        <a class="rounded-lg px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-blue-50 hover:text-blue-700 dark:text-slate-200 dark:hover:bg-slate-900 dark:hover:text-blue-400" href="https://itusolutions.github.io/updated-i-tu/contact/">Contact</a>
+        <a class="inline-flex items-center gap-1.5 rounded-lg px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-blue-50 hover:text-blue-700 dark:text-slate-200 dark:hover:bg-slate-900 dark:hover:text-blue-400" href="https://itusolutions.github.io/updated-i-tu/portfolio/">
+          <i class="fa-solid fa-briefcase text-xs text-slate-400" aria-hidden="true"></i>
+          <span>Portfolio</span>
+        </a>
+
+        <a class="inline-flex items-center gap-1.5 rounded-lg px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-blue-50 hover:text-blue-700 dark:text-slate-200 dark:hover:bg-slate-900 dark:hover:text-blue-400" href="https://itusolutions.github.io/updated-i-tu/blog/">
+          <i class="fa-solid fa-newspaper text-xs text-slate-400" aria-hidden="true"></i>
+          <span>Blog</span>
+        </a>
+
+        <a class="inline-flex items-center gap-1.5 rounded-lg px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-blue-50 hover:text-blue-700 dark:text-slate-200 dark:hover:bg-slate-900 dark:hover:text-blue-400" href="https://itusolutions.github.io/updated-i-tu/contact/">
+          <i class="fa-solid fa-envelope text-xs text-slate-400" aria-hidden="true"></i>
+          <span>Contact</span>
+        </a>
       </div>
     </nav>
 
     <!-- Mobile Navigation Drawer -->
     <nav id="mobile-menu" class="hidden border-t border-slate-200 bg-white px-4 py-4 dark:border-slate-800 dark:bg-slate-950 md:hidden" aria-label="Mobile navigation">
       <div class="mx-auto grid max-w-7xl gap-1">
-        <a class="rounded-lg px-3 py-2 font-medium text-slate-800 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-900" href="https://itusolutions.github.io/updated-i-tu/">Home</a>
-        <a class="rounded-lg px-3 py-2 font-medium text-slate-800 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-900" href="https://itusolutions.github.io/updated-i-tu/about/">About</a>
-        <a class="rounded-lg px-3 py-2 font-medium text-slate-800 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-900" href="https://itusolutions.github.io/updated-i-tu/services/">All Services</a>
-        <a class="block rounded-lg px-3 py-2 text-sm text-slate-600 transition hover:bg-blue-50 hover:text-blue-700 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-blue-400" href="https://itusolutions.github.io/updated-i-tu/services/computer-services/">Computer Services</a>
-        <a class="block rounded-lg px-3 py-2 text-sm text-slate-600 transition hover:bg-blue-50 hover:text-blue-700 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-blue-400" href="https://itusolutions.github.io/updated-i-tu/services/computer-repairs/">Computer Repairs</a>
-        <a class="block rounded-lg px-3 py-2 text-sm text-slate-600 transition hover:bg-blue-50 hover:text-blue-700 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-blue-400" href="https://itusolutions.github.io/updated-i-tu/services/laptop-repairs/">Laptop &amp; Desktop Repairs</a>
-        <a class="block rounded-lg px-3 py-2 text-sm text-slate-600 transition hover:bg-blue-50 hover:text-blue-700 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-blue-400" href="https://itusolutions.github.io/updated-i-tu/services/hardware-upgrades/">Hardware Upgrades</a>
-        <a class="block rounded-lg px-3 py-2 text-sm text-slate-600 transition hover:bg-blue-50 hover:text-blue-700 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-blue-400" href="https://itusolutions.github.io/updated-i-tu/services/operating-system-installation/">Operating System Installation</a>
-        <a class="block rounded-lg px-3 py-2 text-sm text-slate-600 transition hover:bg-blue-50 hover:text-blue-700 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-blue-400" href="https://itusolutions.github.io/updated-i-tu/services/software-installation/">Software Installation</a>
-        <a class="block rounded-lg px-3 py-2 text-sm text-slate-600 transition hover:bg-blue-50 hover:text-blue-700 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-blue-400" href="https://itusolutions.github.io/updated-i-tu/services/it-support/">IT Support</a>
-        <a class="block rounded-lg px-3 py-2 text-sm text-slate-600 transition hover:bg-blue-50 hover:text-blue-700 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-blue-400" href="https://itusolutions.github.io/updated-i-tu/services/networking/">Networking &amp; Wi-Fi</a>
-        <a class="block rounded-lg px-3 py-2 text-sm text-slate-600 transition hover:bg-blue-50 hover:text-blue-700 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-blue-400" href="https://itusolutions.github.io/updated-i-tu/services/cybersecurity/">Cybersecurity Assistance</a>
-        <a class="block rounded-lg px-3 py-2 text-sm text-slate-600 transition hover:bg-blue-50 hover:text-blue-700 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-blue-400" href="https://itusolutions.github.io/updated-i-tu/services/wifi-installation/">Wi-Fi Installation</a>
-        <a class="block rounded-lg px-3 py-2 text-sm text-slate-600 transition hover:bg-blue-50 hover:text-blue-700 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-blue-400" href="https://itusolutions.github.io/updated-i-tu/services/printer-setup/">Printer Setup</a>
-        <a class="block rounded-lg px-3 py-2 text-sm text-slate-600 transition hover:bg-blue-50 hover:text-blue-700 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-blue-400" href="https://itusolutions.github.io/updated-i-tu/services/data-backup-recovery/">Data Backup &amp; Recovery</a>
-        <a class="block rounded-lg px-3 py-2 text-sm text-slate-600 transition hover:bg-blue-50 hover:text-blue-700 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-blue-400" href="https://itusolutions.github.io/updated-i-tu/services/website-development/">Website Development</a>
-        <a class="block rounded-lg px-3 py-2 text-sm text-slate-600 transition hover:bg-blue-50 hover:text-blue-700 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-blue-400" href="https://itusolutions.github.io/updated-i-tu/services/company-websites/">Company Websites</a>
-        <a class="block rounded-lg px-3 py-2 text-sm text-slate-600 transition hover:bg-blue-50 hover:text-blue-700 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-blue-400" href="https://itusolutions.github.io/updated-i-tu/services/personal-websites/">Personal &amp; Portfolio Websites</a>
-        <a class="rounded-lg px-3 py-2 font-medium text-slate-800 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-900" href="https://itusolutions.github.io/updated-i-tu/solutions/">Solutions</a>
-        <a class="rounded-lg px-3 py-2 font-medium text-slate-800 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-900" href="https://itusolutions.github.io/updated-i-tu/pricing/">Pricing</a>
-        <a class="rounded-lg px-3 py-2 font-medium text-slate-800 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-900" href="https://itusolutions.github.io/updated-i-tu/portfolio/">Portfolio</a>
-        <a class="rounded-lg px-3 py-2 font-medium text-slate-800 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-900" href="https://itusolutions.github.io/updated-i-tu/blog/">Blog</a>
-        <a class="rounded-lg px-3 py-2 font-medium text-slate-800 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-900" href="https://itusolutions.github.io/updated-i-tu/faq/">FAQ</a>
-        <a class="rounded-lg px-3 py-2 font-medium text-slate-800 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-900" href="https://itusolutions.github.io/updated-i-tu/support/">Support</a>
-        <a class="rounded-lg px-3 py-2 font-medium text-slate-800 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-900" href="https://itusolutions.github.io/updated-i-tu/contact/">Contact</a>
+        <a class="flex items-center gap-2.5 rounded-lg px-3 py-2 font-medium text-slate-800 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-900" href="https://itusolutions.github.io/updated-i-tu/">
+          <i class="fa-solid fa-house w-4 text-center text-xs text-slate-400" aria-hidden="true"></i>
+          <span>Home</span>
+        </a>
+        <a class="flex items-center gap-2.5 rounded-lg px-3 py-2 font-medium text-slate-800 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-900" href="https://itusolutions.github.io/updated-i-tu/about/">
+          <i class="fa-solid fa-circle-info w-4 text-center text-xs text-slate-400" aria-hidden="true"></i>
+          <span>About</span>
+        </a>
+        <a class="flex items-center gap-2.5 rounded-lg px-3 py-2 font-medium text-slate-800 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-900" href="https://itusolutions.github.io/updated-i-tu/services/">
+          <i class="fa-solid fa-screwdriver-wrench w-4 text-center text-xs text-green-600 dark:text-green-400" aria-hidden="true"></i>
+          <span>All Services</span>
+        </a>
+        <a class="flex items-center gap-2.5 rounded-lg px-3 py-2 pl-7 text-sm text-slate-600 transition hover:bg-blue-50 hover:text-blue-700 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-blue-400" href="https://itusolutions.github.io/updated-i-tu/services/computer-services/">
+          <i class="fa-solid fa-desktop w-4 text-center text-xs text-slate-400" aria-hidden="true"></i>
+          <span>Computer Services</span>
+        </a>
+        <a class="flex items-center gap-2.5 rounded-lg px-3 py-2 pl-7 text-sm text-slate-600 transition hover:bg-blue-50 hover:text-blue-700 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-blue-400" href="https://itusolutions.github.io/updated-i-tu/services/computer-repairs/">
+          <i class="fa-solid fa-wrench w-4 text-center text-xs text-slate-400" aria-hidden="true"></i>
+          <span>Computer Repairs</span>
+        </a>
+        <a class="flex items-center gap-2.5 rounded-lg px-3 py-2 pl-7 text-sm text-slate-600 transition hover:bg-blue-50 hover:text-blue-700 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-blue-400" href="https://itusolutions.github.io/updated-i-tu/services/laptop-repairs/">
+          <i class="fa-solid fa-laptop-medical w-4 text-center text-xs text-slate-400" aria-hidden="true"></i>
+          <span>Laptop &amp; Desktop Repairs</span>
+        </a>
+        <a class="flex items-center gap-2.5 rounded-lg px-3 py-2 pl-7 text-sm text-slate-600 transition hover:bg-blue-50 hover:text-blue-700 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-blue-400" href="https://itusolutions.github.io/updated-i-tu/services/hardware-upgrades/">
+          <i class="fa-solid fa-memory w-4 text-center text-xs text-slate-400" aria-hidden="true"></i>
+          <span>Hardware Upgrades</span>
+        </a>
+        <a class="flex items-center gap-2.5 rounded-lg px-3 py-2 pl-7 text-sm text-slate-600 transition hover:bg-blue-50 hover:text-blue-700 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-blue-400" href="https://itusolutions.github.io/updated-i-tu/services/operating-system-installation/">
+          <i class="fa-brands fa-windows w-4 text-center text-xs text-slate-400" aria-hidden="true"></i>
+          <span>Operating System Installation</span>
+        </a>
+        <a class="flex items-center gap-2.5 rounded-lg px-3 py-2 pl-7 text-sm text-slate-600 transition hover:bg-blue-50 hover:text-blue-700 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-blue-400" href="https://itusolutions.github.io/updated-i-tu/services/software-installation/">
+          <i class="fa-solid fa-download w-4 text-center text-xs text-slate-400" aria-hidden="true"></i>
+          <span>Software Installation</span>
+        </a>
+        <a class="flex items-center gap-2.5 rounded-lg px-3 py-2 pl-7 text-sm text-slate-600 transition hover:bg-blue-50 hover:text-blue-700 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-blue-400" href="https://itusolutions.github.io/updated-i-tu/services/it-support/">
+          <i class="fa-solid fa-headset w-4 text-center text-xs text-slate-400" aria-hidden="true"></i>
+          <span>IT Support</span>
+        </a>
+        <a class="flex items-center gap-2.5 rounded-lg px-3 py-2 pl-7 text-sm text-slate-600 transition hover:bg-blue-50 hover:text-blue-700 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-blue-400" href="https://itusolutions.github.io/updated-i-tu/services/networking/">
+          <i class="fa-solid fa-wifi w-4 text-center text-xs text-slate-400" aria-hidden="true"></i>
+          <span>Networking &amp; Wi-Fi</span>
+        </a>
+        <a class="flex items-center gap-2.5 rounded-lg px-3 py-2 pl-7 text-sm text-slate-600 transition hover:bg-blue-50 hover:text-blue-700 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-blue-400" href="https://itusolutions.github.io/updated-i-tu/services/cybersecurity/">
+          <i class="fa-solid fa-shield-halved w-4 text-center text-xs text-slate-400" aria-hidden="true"></i>
+          <span>Cybersecurity Assistance</span>
+        </a>
+        <a class="flex items-center gap-2.5 rounded-lg px-3 py-2 pl-7 text-sm text-slate-600 transition hover:bg-blue-50 hover:text-blue-700 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-blue-400" href="https://itusolutions.github.io/updated-i-tu/services/wifi-installation/">
+          <i class="fa-solid fa-router w-4 text-center text-xs text-slate-400" aria-hidden="true"></i>
+          <span>Wi-Fi Installation</span>
+        </a>
+        <a class="flex items-center gap-2.5 rounded-lg px-3 py-2 pl-7 text-sm text-slate-600 transition hover:bg-blue-50 hover:text-blue-700 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-blue-400" href="https://itusolutions.github.io/updated-i-tu/services/printer-setup/">
+          <i class="fa-solid fa-print w-4 text-center text-xs text-slate-400" aria-hidden="true"></i>
+          <span>Printer Setup</span>
+        </a>
+        <a class="flex items-center gap-2.5 rounded-lg px-3 py-2 pl-7 text-sm text-slate-600 transition hover:bg-blue-50 hover:text-blue-700 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-blue-400" href="https://itusolutions.github.io/updated-i-tu/services/data-backup-recovery/">
+          <i class="fa-solid fa-hard-drive w-4 text-center text-xs text-slate-400" aria-hidden="true"></i>
+          <span>Data Backup &amp; Recovery</span>
+        </a>
+        <a class="flex items-center gap-2.5 rounded-lg px-3 py-2 pl-7 text-sm text-slate-600 transition hover:bg-blue-50 hover:text-blue-700 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-blue-400" href="https://itusolutions.github.io/updated-i-tu/services/website-development/">
+          <i class="fa-solid fa-globe w-4 text-center text-xs text-slate-400" aria-hidden="true"></i>
+          <span>Website Development</span>
+        </a>
+        <a class="flex items-center gap-2.5 rounded-lg px-3 py-2 pl-7 text-sm text-slate-600 transition hover:bg-blue-50 hover:text-blue-700 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-blue-400" href="https://itusolutions.github.io/updated-i-tu/services/company-websites/">
+          <i class="fa-solid fa-building w-4 text-center text-xs text-slate-400" aria-hidden="true"></i>
+          <span>Company Websites</span>
+        </a>
+        <a class="flex items-center gap-2.5 rounded-lg px-3 py-2 pl-7 text-sm text-slate-600 transition hover:bg-blue-50 hover:text-blue-700 dark:text-slate-400 dark:hover:bg-slate-900 dark:hover:text-blue-400" href="https://itusolutions.github.io/updated-i-tu/services/personal-websites/">
+          <i class="fa-solid fa-id-card w-4 text-center text-xs text-slate-400" aria-hidden="true"></i>
+          <span>Personal &amp; Portfolio Websites</span>
+        </a>
+        <a class="flex items-center gap-2.5 rounded-lg px-3 py-2 font-medium text-slate-800 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-900" href="https://itusolutions.github.io/updated-i-tu/solutions/">
+          <i class="fa-solid fa-layer-group w-4 text-center text-xs text-blue-600 dark:text-blue-400" aria-hidden="true"></i>
+          <span>Solutions</span>
+        </a>
+        <a class="flex items-center gap-2.5 rounded-lg px-3 py-2 font-medium text-slate-800 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-900" href="https://itusolutions.github.io/updated-i-tu/pricing/">
+          <i class="fa-solid fa-tags w-4 text-center text-xs text-slate-400" aria-hidden="true"></i>
+          <span>Pricing</span>
+        </a>
+        <a class="flex items-center gap-2.5 rounded-lg px-3 py-2 font-medium text-slate-800 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-900" href="https://itusolutions.github.io/updated-i-tu/portfolio/">
+          <i class="fa-solid fa-briefcase w-4 text-center text-xs text-slate-400" aria-hidden="true"></i>
+          <span>Portfolio</span>
+        </a>
+        <a class="flex items-center gap-2.5 rounded-lg px-3 py-2 font-medium text-slate-800 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-900" href="https://itusolutions.github.io/updated-i-tu/blog/">
+          <i class="fa-solid fa-newspaper w-4 text-center text-xs text-slate-400" aria-hidden="true"></i>
+          <span>Blog</span>
+        </a>
+        <a class="flex items-center gap-2.5 rounded-lg px-3 py-2 font-medium text-slate-800 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-900" href="https://itusolutions.github.io/updated-i-tu/faq/">
+          <i class="fa-solid fa-circle-question w-4 text-center text-xs text-slate-400" aria-hidden="true"></i>
+          <span>FAQ</span>
+        </a>
+        <a class="flex items-center gap-2.5 rounded-lg px-3 py-2 font-medium text-slate-800 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-900" href="https://itusolutions.github.io/updated-i-tu/support/">
+          <i class="fa-solid fa-life-ring w-4 text-center text-xs text-slate-400" aria-hidden="true"></i>
+          <span>Support</span>
+        </a>
+        <a class="flex items-center gap-2.5 rounded-lg px-3 py-2 font-medium text-slate-800 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-900" href="https://itusolutions.github.io/updated-i-tu/contact/">
+          <i class="fa-solid fa-envelope w-4 text-center text-xs text-slate-400" aria-hidden="true"></i>
+          <span>Contact</span>
+        </a>
       </div>
     </nav>
   </header>
+</body>
 
 <main id="main" class="bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100">
     <!-- Hero Section -->
