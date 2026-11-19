@@ -107,3 +107,68 @@
     scroll-behavior: auto !important;
   }
 }
+
+
+
+
+
+
+
+/* ==========================================================================
+   Theme Toggle Button (#themeToggle / .theme-toggle)
+   Ensures strictly one icon is displayed per active theme (light vs .dark)
+   ========================================================================== */
+
+#themeToggle,
+.theme-toggle,
+[data-theme-toggle] {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Light Mode (default): show .light-icon only, hide .dark-icon */
+html:not(.dark) #themeToggle .light-icon,
+html:not(.dark) .theme-toggle .light-icon,
+html:not(.dark) [data-theme-toggle] .light-icon {
+  display: inline-block !important;
+  color: #f59e0b; /* warm amber sun */
+}
+
+html:not(.dark) #themeToggle .dark-icon,
+html:not(.dark) .theme-toggle .dark-icon,
+html:not(.dark) [data-theme-toggle] .dark-icon {
+  display: none !important;
+}
+
+/* Dark Mode (html.dark): hide .light-icon, show .dark-icon only */
+html.dark #themeToggle .light-icon,
+html.dark .theme-toggle .light-icon,
+html.dark [data-theme-toggle] .light-icon {
+  display: none !important;
+}
+
+html.dark #themeToggle .dark-icon,
+html.dark .theme-toggle .dark-icon,
+html.dark [data-theme-toggle] .dark-icon {
+  display: inline-block !important;
+  color: #60a5fa; /* soft blue moon */
+}
+
+/* Focus & Active Polish */
+#themeToggle:focus-visible,
+.theme-toggle:focus-visible,
+[data-theme-toggle]:focus-visible {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+#themeToggle:active i,
+.theme-toggle:active i,
+[data-theme-toggle]:active i {
+  transform: scale(0.9);
+  transition: transform 120ms ease;
+}
