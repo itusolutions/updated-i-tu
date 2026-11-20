@@ -1,14 +1,13 @@
 (function () {
   function ensureTopNavAlwaysVisible(desktopNav) {
-    const navContainer = desktopNav.querySelector(":scope > div") || desktopNav;
-    const allTopItems = navContainer.querySelectorAll(":scope > a, :scope > div, :scope > button");
+    const allTopItems = desktopNav.querySelectorAll(":scope > a, :scope > div, :scope > button");
     allTopItems.forEach((el) => {
       el.classList.remove("hidden", "invisible", "opacity-0");
       el.style.visibility = "visible";
       el.style.opacity = "1";
     });
 
-    const directLinks = navContainer.querySelectorAll(":scope > a, :scope > div > a, :scope > div > button");
+    const directLinks = desktopNav.querySelectorAll(":scope > a, :scope > div > a, :scope > div > button");
     directLinks.forEach((ctrl) => {
       ctrl.classList.remove("hidden", "invisible", "opacity-0");
       ctrl.style.visibility = "visible";
@@ -22,9 +21,7 @@
 
     ensureTopNavAlwaysVisible(desktopNav);
 
-    const navContainer = desktopNav.querySelector(":scope > div") || desktopNav;
-    const candidateWrappers = Array.from(navContainer.querySelectorAll(":scope > div"));
-
+    const candidateWrappers = Array.from(desktopNav.querySelectorAll(":scope > div"));
     const items = candidateWrappers
       .map((wrapper) => {
         const trigger = wrapper.querySelector(":scope > a, :scope > button");
@@ -38,6 +35,7 @@
 
         if (!panel) return null;
 
+        // Ensure smooth CSS transition on panel
         if (!panel.style.transition) {
           panel.style.transition = "opacity 160ms ease, transform 160ms ease, visibility 160ms ease";
         }
@@ -94,18 +92,11 @@
       entry.panel.style.visibility = "hidden";
       entry.panel.style.pointerEvents = "none";
       entry.trigger.setAttribute("aria-expanded", "false");
-
-      if (entry.wrapper.contains(document.activeElement)) {
-        document.activeElement.blur();
-      }
     }
 
     function closeAll(exceptWrapper) {
       items.forEach((entry) => {
         if (entry.wrapper !== exceptWrapper) {
-          if (pinnedWrapper === entry.wrapper) {
-            pinnedWrapper = null;
-          }
           hidePanel(entry);
         }
       });
@@ -114,19 +105,15 @@
       }
     }
 
-    function openExclusive(entry) {
-      closeAll(entry.wrapper);
-      showPanel(entry);
-    }
-
     items.forEach((entry) => {
       entry.trigger.setAttribute("aria-haspopup", "true");
       entry.trigger.setAttribute("aria-expanded", "false");
       hidePanel(entry);
 
-      entry.wrapper.addEventListener("pointerenter", function () {
+      entry.wrapper.addEventListener("mouseenter", function () {
         clearTimer(entry);
-        openExclusive(entry);
+        closeAll(entry.wrapper);
+        showPanel(entry);
       });
 
       entry.wrapper.addEventListener("mouseleave", function () {
@@ -134,12 +121,12 @@
         clearTimer(entry);
         entry.closeTimer = window.setTimeout(function () {
           hidePanel(entry);
-        }, 120);
+        }, 140);
       });
 
-      entry.panel.addEventListener("pointerenter", function () {
+      entry.panel.addEventListener("mouseenter", function () {
         clearTimer(entry);
-        openExclusive(entry);
+        showPanel(entry);
       });
 
       entry.panel.addEventListener("mouseleave", function () {
@@ -147,12 +134,13 @@
         clearTimer(entry);
         entry.closeTimer = window.setTimeout(function () {
           hidePanel(entry);
-        }, 120);
+        }, 140);
       });
 
       entry.wrapper.addEventListener("focusin", function () {
         clearTimer(entry);
-        openExclusive(entry);
+        closeAll(entry.wrapper);
+        showPanel(entry);
       });
 
       entry.wrapper.addEventListener("focusout", function (event) {
@@ -162,7 +150,7 @@
             if (!entry.wrapper.contains(document.activeElement)) {
               hidePanel(entry);
             }
-          }, 90);
+          }, 100);
         }
       });
 
@@ -173,16 +161,18 @@
 
         if (isCoarsePointer && (!isPanelOpen || pinnedWrapper !== entry.wrapper)) {
           event.preventDefault();
+          closeAll(entry.wrapper);
           pinnedWrapper = entry.wrapper;
-          openExclusive(entry);
+          showPanel(entry);
         } else if (entry.trigger.tagName === "BUTTON") {
           event.preventDefault();
           if (isPanelOpen) {
             pinnedWrapper = null;
             hidePanel(entry);
           } else {
+            closeAll(entry.wrapper);
             pinnedWrapper = entry.wrapper;
-            openExclusive(entry);
+            showPanel(entry);
           }
         }
       });
