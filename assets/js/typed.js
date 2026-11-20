@@ -13,8 +13,26 @@
     );
   }
 
+  function isElementHidden(el) {
+    if (!el) return true;
+    const style = window.getComputedStyle(el);
+    if (style.display === "none" || style.visibility === "hidden") return true;
+    // Check ancestors for display: none
+    let parent = el.parentElement;
+    while (parent && parent !== document.body) {
+      const pStyle = window.getComputedStyle(parent);
+      if (pStyle.display === "none") return true;
+      parent = parent.parentElement;
+    }
+    return false;
+  }
+
   function parseStrings(el) {
-    const raw = el.getAttribute("data-typed-strings");
+    const raw =
+      el.getAttribute("data-typed-strings") ||
+      (el.closest("[data-typed-strings]") &&
+        el.closest("[data-typed-strings]").getAttribute("data-typed-strings"));
+
     if (!raw) return DEFAULT_STRINGS.slice();
 
     try {
@@ -32,16 +50,18 @@
 
   function mountTyped(el) {
     if (!el || el.dataset.typedInitialized === "true") return;
-    el.dataset.typedInitialized = "true";
+    if (isElementHidden(el)) return;
 
     const strings = parseStrings(el);
 
     if (prefersReducedMotion()) {
+      el.dataset.typedInitialized = "true";
       el.textContent = strings[0] || "";
       return;
     }
 
     if (typeof window.Typed === "function") {
+      el.dataset.typedInitialized = "true";
       new window.Typed(el, {
         strings: strings,
         typeSpeed: Number(el.getAttribute("data-type-speed")) || 45,
@@ -56,20 +76,43 @@
     }
   }
 
-  function initTyped() {
+  function collectTargets() {
     const targets = new Set();
-
-    const heroTarget = document.getElementById("hero-typed");
-    if (heroTarget) targets.add(heroTarget);
-
+    // Support multiple [data-typed] elements (mobile, tablet, desktop)
     document.querySelectorAll("[data-typed]").forEach((el) => targets.add(el));
+    // Fallback if only #hero-typed is used
+    if (targets.size === 0) {
+      document.querySelectorAll("#hero-typed").forEach((el) => targets.add(el));
+    }
+    return Array.from(targets);
+  }
+
+  function initTyped(attempt) {
+    const tries = attempt || 0;
+    const targets = collectTargets();
 
     targets.forEach(mountTyped);
+
+    // If Typed CDN script hasn't finished loading yet, retry briefly
+    if (typeof window.Typed !== "function" && tries < 25) {
+      window.setTimeout(function () {
+        initTyped(tries + 1);
+      }, 120);
+    }
+  }
+
+  function refreshOnViewportChange() {
+    collectTargets().forEach(mountTyped);
   }
 
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initTyped);
+    document.addEventListener("DOMContentLoaded", function () {
+      initTyped(0);
+    });
   } else {
-    initTyped();
+    initTyped(0);
   }
+
+  window.addEventListener("resize", refreshOnViewportChange, { passive: true });
+  window.addEventListener("orientationchange", refreshOnViewportChange, { passive: true });
 })();
