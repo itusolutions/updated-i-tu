@@ -913,64 +913,340 @@
     </nav>
   </header>
 
-  <main id="main">
-    <section class="relative isolate overflow-hidden bg-slate-950">
-      <div class="absolute inset-0 -z-10 bg-gradient-to-br from-blue-950 via-slate-950 to-green-950"></div>
+<main id="main" class="pt-[4.25rem] md:pt-[7.25rem]">
+    <!-- Hero Section with Scroll & Mouse Parallax + Directional Reveals -->
+    <section class="relative isolate min-h-[550px] overflow-hidden bg-slate-950">
+      <!-- Parallax Gradient & Ambient Backdrop Layer -->
+      <div
+        data-itu-parallax
+        data-parallax-speed="0.15"
+        data-parallax-direction="up"
+        class="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-br from-blue-950 via-slate-950 to-green-950"
+      ></div>
+
       <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
-        <p class="mb-4 inline-flex rounded-full border border-green-300/30 bg-green-300/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-green-300">iTu Solutions · Polokwane, Limpopo</p>
-        <div class="max-w-3xl">
-          <h1 class="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-6xl">Practical technology. Personal service.</h1>
-          <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-300">We make technology easier to use through clear advice, practical solutions and dependable digital services.</p>
-          <div class="mt-8 flex flex-wrap gap-3">
-            <a href="/form/contact-form/" class="rounded-lg bg-green-500 px-6 py-3 font-bold text-slate-950 shadow-lg shadow-green-950/30 transition hover:bg-lime-400 focus:outline-none focus:ring-4 focus:ring-green-300/40">Discover our approach</a>
-            <a href="/services/" class="rounded-lg border border-white/25 px-6 py-3 font-semibold text-white transition hover:bg-white/10">Browse services</a>
+        <div class="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_360px]">
+          <!-- Left Content Column -->
+          <div class="max-w-3xl">
+            <p class="itu-reveal itu-reveal-down mb-4 inline-flex items-center gap-2 rounded-full border border-green-300/30 bg-green-300/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.18em] text-green-300">
+              <i class="fa-solid fa-location-dot text-[11px]" aria-hidden="true"></i>
+              <span>iTu Solutions · Polokwane, Limpopo</span>
+            </p>
+
+            <h1 class="itu-reveal itu-reveal-left text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-6xl">
+              Practical technology. Personal service.
+            </h1>
+
+            <p class="itu-reveal itu-reveal-up mt-6 max-w-2xl text-lg leading-8 text-slate-300">
+              We make technology easier to use through clear advice, practical solutions and dependable digital services.
+            </p>
+
+            <div class="itu-reveal itu-reveal-center-in mt-8 flex flex-wrap gap-3">
+              <a
+                href="https://itusolutions.github.io/updated-i-tu/form/contact-form/"
+                class="rounded-lg bg-green-500 px-6 py-3 font-bold text-slate-950 shadow-lg shadow-green-950/30 transition hover:bg-lime-400 focus:outline-none focus:ring-4 focus:ring-green-300/40"
+              >
+                Discover our approach
+              </a>
+              <a
+                href="https://itusolutions.github.io/updated-i-tu/services/"
+                class="rounded-lg border border-white/25 px-6 py-3 font-semibold text-white transition hover:bg-white/10"
+              >
+                Browse services
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Hero Visual with Scroll + Mouse Parallax -->
+          <div
+            data-itu-parallax
+            data-parallax-speed="0.35"
+            data-parallax-direction="down"
+            class="itu-reveal itu-reveal-right mx-auto w-full max-w-[360px] lg:mx-0"
+          >
+            <div
+              data-parallax-mouse="15"
+              class="rounded-3xl border border-white/10 bg-white/5 p-4 shadow-2xl backdrop-blur-sm"
+            >
+              <img
+                src="https://itusolutions.github.io/updated-i-tu/assets/images/hero-tech.svg"
+                alt="iTu Solutions technology services"
+                width="360"
+                height="260"
+                class="h-auto w-full rounded-2xl object-contain drop-shadow-2xl"
+                loading="eager"
+                decoding="async"
+              >
+            </div>
           </div>
         </div>
       </div>
-    
-      <div class="pointer-events-none absolute right-4 top-1/2 hidden -translate-y-1/2 lg:block xl:right-10" aria-hidden="true">
-        <img src="/assets/images/hero-tech.svg" alt="" width="360" height="260" class="h-auto w-[300px] rounded-3xl opacity-90 drop-shadow-2xl xl:w-[360px]" loading="eager" decoding="async">
-      </div>
-</section>
+    </section>
 
+    <!-- About Us & Core Values Section (Corner & Directional Reveals) -->
     <section class="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
       <div class="grid gap-10 lg:grid-cols-[minmax(0,1fr)_320px]">
         <article class="min-w-0">
-          <p class="text-sm font-bold uppercase tracking-wider text-green-700">iTu Solutions</p>
-          <h2 class="mt-2 text-2xl font-extrabold tracking-tight text-slate-950 sm:text-3xl">About Us</h2>
-          <p class="mt-4 max-w-3xl leading-7 text-slate-600">Learn about iTu Solutions, an IT services and website development business serving Polokwane and surrounding areas.</p>
-          <div class="mt-8 grid gap-4 sm:grid-cols-2">
-            <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"><div class="mb-3 grid h-10 w-10 place-items-center rounded-xl bg-green-100 text-green-700">✓</div><h3 class="font-bold text-slate-900">Clear communication</h3><p class="mt-2 text-sm leading-6 text-slate-600">We explain the issue, available options and likely next steps in straightforward language.</p></div>
-            <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"><div class="mb-3 grid h-10 w-10 place-items-center rounded-xl bg-blue-100 text-blue-700">⌘</div><h3 class="font-bold text-slate-900">Practical solutions</h3><p class="mt-2 text-sm leading-6 text-slate-600">Recommendations are based on your requirements, device compatibility and budget.</p></div>
-            <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"><div class="mb-3 grid h-10 w-10 place-items-center rounded-xl bg-yellow-100 text-yellow-700">◎</div><h3 class="font-bold text-slate-900">Careful approach</h3><p class="mt-2 text-sm leading-6 text-slate-600">Work is discussed before proceeding, including parts, licensing and data considerations.</p></div>
-            <div class="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"><div class="mb-3 grid h-10 w-10 place-items-center rounded-xl bg-orange-100 text-orange-700">↗</div><h3 class="font-bold text-slate-900">Support for different needs</h3><p class="mt-2 text-sm leading-6 text-slate-600">Services cover personal devices, study needs, small businesses and website projects.</p></div>
+          <div class="itu-reveal itu-reveal-up">
+            <p class="text-sm font-bold uppercase tracking-wider text-green-700 dark:text-green-400">
+              iTu Solutions
+            </p>
+            <h2 class="mt-2 text-2xl font-extrabold tracking-tight text-slate-950 dark:text-white sm:text-3xl">
+              About Us
+            </h2>
+            <p class="mt-4 max-w-3xl leading-7 text-slate-600 dark:text-slate-300">
+              Learn about iTu Solutions, an IT services and website development business serving Polokwane and surrounding areas.
+            </p>
           </div>
-          
-        <div class="mt-8 flex flex-wrap gap-3">
-          <a href="/form/contact-form/" class="inline-flex items-center justify-center rounded-lg bg-blue-600 px-6 py-3 font-semibold text-white shadow-sm transition hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-200">Request a quotation</a>
-          <a href="/contact/" class="inline-flex items-center justify-center rounded-lg border border-slate-300 bg-white px-6 py-3 font-semibold text-slate-800 transition hover:bg-slate-50">Contact us</a>
-        </div>
+
+          <!-- 4-Corner Reveal Value Cards -->
+          <div class="mt-8 grid gap-4 sm:grid-cols-2">
+            <div class="itu-reveal itu-reveal-top-left rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+              <div class="mb-3 grid h-10 w-10 place-items-center rounded-xl bg-green-100 text-green-700 dark:bg-green-950 dark:text-green-400">
+                ✓
+              </div>
+              <h3 class="font-bold text-slate-900 dark:text-white">Clear communication</h3>
+              <p class="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400">
+                We explain the issue, available options and likely next steps in straightforward language.
+              </p>
+            </div>
+
+            <div class="itu-reveal itu-reveal-top-right rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+              <div class="mb-3 grid h-10 w-10 place-items-center rounded-xl bg-blue-100 text-blue-700 dark:bg-blue-950 dark:text-blue-400">
+                ⌘
+              </div>
+              <h3 class="font-bold text-slate-900 dark:text-white">Practical solutions</h3>
+              <p class="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400">
+                Recommendations are based on your requirements, device compatibility and budget.
+              </p>
+            </div>
+
+            <div class="itu-reveal itu-reveal-bottom-left rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+              <div class="mb-3 grid h-10 w-10 place-items-center rounded-xl bg-yellow-100 text-yellow-700 dark:bg-yellow-950 dark:text-yellow-400">
+                ◎
+              </div>
+              <h3 class="font-bold text-slate-900 dark:text-white">Careful approach</h3>
+              <p class="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400">
+                Work is discussed before proceeding, including parts, licensing and data considerations.
+              </p>
+            </div>
+
+            <div class="itu-reveal itu-reveal-bottom-right rounded-2xl border border-slate-200 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+              <div class="mb-3 grid h-10 w-10 place-items-center rounded-xl bg-orange-100 text-orange-700 dark:bg-orange-950 dark:text-orange-400">
+                ↗
+              </div>
+              <h3 class="font-bold text-slate-900 dark:text-white">Support for different needs</h3>
+              <p class="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400">
+                Services cover personal devices, study needs, small businesses and website projects.
+              </p>
+            </div>
+          </div>
+
+          <div class="itu-reveal itu-reveal-up mt-8 flex flex-wrap gap-3">
+            <a
+              href="https://itusolutions.github.io/updated-i-tu/form/contact-form/"
+              class="inline-flex items-center justify-center rounded-lg bg-blue-600 px-6 py-3 font-semibold text-white shadow-sm transition hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-200"
+            >
+              Request a quotation
+            </a>
+            <a
+              href="https://itusolutions.github.io/updated-i-tu/contact/"
+              class="inline-flex items-center justify-center rounded-lg border border-slate-300 bg-white px-6 py-3 font-semibold text-slate-800 transition hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-200 dark:hover:bg-slate-800"
+            >
+              Contact us
+            </a>
+          </div>
         </article>
-        <aside class="h-fit rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
-          <h2 class="text-lg font-extrabold text-slate-950">Need assistance?</h2>
-          <p class="mt-2 text-sm leading-6 text-slate-600">Tell us what you are trying to achieve or what is not working. We can discuss the appropriate next step.</p>
-          <a href="/contact/" class="mt-5 block rounded-lg bg-blue-600 px-4 py-3 text-center text-sm font-bold text-white hover:bg-blue-700">Contact iTu Solutions</a>
-          <a href="https://wa.me/27711405870" class="mt-3 block rounded-lg border border-green-200 bg-green-50 px-4 py-3 text-center text-sm font-bold text-green-800 hover:bg-green-100">WhatsApp us</a>
-          <div class="mt-6 border-t border-slate-100 pt-5 text-sm text-slate-600"><p class="font-semibold text-slate-900">Service area</p><p class="mt-1">Ga-Mothiba, Nobody, Polokwane, Limpopo, South Africa.</p></div>
+
+        <!-- Sidebar Assistance Card -->
+        <aside class="itu-reveal itu-reveal-right h-fit rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+          <h2 class="text-lg font-extrabold text-slate-950 dark:text-white">Need assistance?</h2>
+          <p class="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400">
+            Tell us what you are trying to achieve or what is not working. We can discuss the appropriate next step.
+          </p>
+          <a
+            href="https://itusolutions.github.io/updated-i-tu/contact/"
+            class="mt-5 block rounded-lg bg-blue-600 px-4 py-3 text-center text-sm font-bold text-white hover:bg-blue-700"
+          >
+            Contact iTu Solutions
+          </a>
+          <a
+            href="https://wa.me/27711405870"
+            class="mt-3 block rounded-lg border border-green-200 bg-green-50 px-4 py-3 text-center text-sm font-bold text-green-800 hover:bg-green-100 dark:border-green-900/50 dark:bg-green-950/50 dark:text-green-300 dark:hover:bg-green-900/50"
+          >
+            WhatsApp us
+          </a>
+          <div class="mt-6 border-t border-slate-100 pt-5 text-sm text-slate-600 dark:border-slate-800 dark:text-slate-400">
+            <p class="font-semibold text-slate-900 dark:text-white">Service area</p>
+            <p class="mt-1">Ga-Mothiba, Nobody, Polokwane, Limpopo, South Africa.</p>
+          </div>
         </aside>
       </div>
     </section>
 
-    <section class="border-y border-slate-200 bg-white">
+    <!-- Featured Services Carousel Section -->
+    <section
+      id="featured-services-carousel"
+      class="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8"
+      data-itu-carousel
+      data-autoplay="true"
+      data-interval="5000"
+      data-loop="true"
+      data-transition="slide"
+      aria-label="Featured services"
+    >
+      <div class="itu-reveal itu-reveal-center-out mb-8 text-center">
+        <p class="font-semibold uppercase tracking-widest text-green-600 dark:text-green-400">
+          iTu Solutions
+        </p>
+        <h2 class="mt-1 text-3xl font-bold text-slate-950 dark:text-white">
+          Our Featured Services
+        </h2>
+      </div>
+
+      <div class="itu-reveal itu-reveal-center-in relative overflow-hidden rounded-2xl border border-slate-200 shadow-xl dark:border-slate-800">
+        <div
+          id="featured-service-track"
+          data-carousel-track
+          class="flex transition-transform duration-500"
+        >
+          <!-- Slide 1 -->
+          <article
+            id="featured-slide-repairs"
+            data-carousel-slide
+            class="w-full shrink-0 bg-slate-50 dark:bg-slate-950"
+          >
+            <div data-parallax-mouse="10" class="p-4">
+              <img
+                src="https://itusolutions.github.io/updated-i-tu/assets/images/computer-repair.svg"
+                alt="Computer repair services"
+                width="720"
+                height="520"
+                class="h-72 w-full object-contain"
+              >
+            </div>
+            <div class="bg-slate-900 p-6 text-white">
+              <h3 class="text-2xl font-bold">Computer Repairs</h3>
+              <p class="mt-1 text-slate-300">Desktop and laptop troubleshooting and maintenance.</p>
+              <a
+                href="https://itusolutions.github.io/updated-i-tu/services/computer-repairs/"
+                class="mt-4 inline-block font-semibold text-lime-300 hover:underline"
+              >
+                Explore service →
+              </a>
+            </div>
+          </article>
+
+          <!-- Slide 2 -->
+          <article
+            id="featured-slide-web"
+            data-carousel-slide
+            class="w-full shrink-0 bg-slate-50 dark:bg-slate-950"
+          >
+            <div data-parallax-mouse="15" class="rounded-3xl p-4">
+              <img
+                src="https://itusolutions.github.io/updated-i-tu/assets/images/website-development.svg"
+                alt="Website development illustration"
+                width="720"
+                height="520"
+                class="h-72 w-full object-contain"
+              >
+            </div>
+            <div class="bg-slate-900 p-6 text-white">
+              <h3 class="text-2xl font-bold">Website Development</h3>
+              <p class="mt-1 text-slate-300">Responsive websites for businesses and organisations.</p>
+              <a
+                href="https://itusolutions.github.io/updated-i-tu/services/website-development/"
+                class="mt-4 inline-block font-semibold text-lime-300 hover:underline"
+              >
+                Explore service →
+              </a>
+            </div>
+          </article>
+
+          <!-- Slide 3 -->
+          <article
+            id="featured-slide-network"
+            data-carousel-slide
+            class="w-full shrink-0 bg-slate-50 dark:bg-slate-950"
+          >
+            <div data-parallax-mouse="10" class="p-4">
+              <img
+                src="https://itusolutions.github.io/updated-i-tu/assets/images/networking.svg"
+                alt="Networking and Wi-Fi services"
+                width="720"
+                height="520"
+                class="h-72 w-full object-contain"
+              >
+            </div>
+            <div class="bg-slate-900 p-6 text-white">
+              <h3 class="text-2xl font-bold">Networking &amp; Wi-Fi</h3>
+              <p class="mt-1 text-slate-300">Network setup, connectivity and router assistance.</p>
+              <a
+                href="https://itusolutions.github.io/updated-i-tu/services/networking/"
+                class="mt-4 inline-block font-semibold text-lime-300 hover:underline"
+              >
+                Explore service →
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- Carousel Navigation Controls -->
+      <div class="itu-reveal itu-reveal-up mt-6 flex items-center justify-center gap-4">
+        <button
+          id="featured-carousel-prev"
+          type="button"
+          data-carousel-prev
+          aria-label="Previous slide"
+          class="cursor-pointer rounded-full bg-slate-900 px-5 py-3 text-white transition hover:bg-green-600 dark:bg-slate-800 dark:hover:bg-green-600"
+        >
+          ←
+        </button>
+
+        <div
+          id="featured-carousel-dots"
+          data-carousel-dots
+          class="flex items-center gap-2"
+          aria-label="Choose a slide"
+        ></div>
+
+        <button
+          id="featured-carousel-next"
+          type="button"
+          data-carousel-next
+          aria-label="Next slide"
+          class="cursor-pointer rounded-full bg-slate-900 px-5 py-3 text-white transition hover:bg-green-600 dark:bg-slate-800 dark:hover:bg-green-600"
+        >
+          →
+        </button>
+      </div>
+    </section>
+
+    <!-- Bottom CTA Banner -->
+    <section class="border-y border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900">
       <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div class="flex flex-col justify-between gap-5 sm:flex-row sm:items-center">
-          <div><h2 class="text-2xl font-extrabold text-slate-950">Let's find the right solution.</h2><p class="mt-2 text-slate-600">Request an assessment or discuss your website requirements.</p></div>
-          <a href="/form/contact-form/" class="inline-flex justify-center rounded-lg bg-orange-500 px-6 py-3 font-bold text-white hover:bg-orange-600">Get in touch</a>
+          <div class="itu-reveal itu-reveal-left">
+            <h2 class="text-2xl font-extrabold text-slate-950 dark:text-white">
+              Let's find the right solution.
+            </h2>
+            <p class="mt-2 text-slate-600 dark:text-slate-400">
+              Request an assessment or discuss your website requirements.
+            </p>
+          </div>
+          <a
+            href="https://itusolutions.github.io/updated-i-tu/form/contact-form/"
+            class="itu-reveal itu-reveal-right inline-flex justify-center rounded-lg bg-orange-500 px-6 py-3 font-bold text-white transition hover:bg-orange-600"
+          >
+            Get in touch
+          </a>
         </div>
       </div>
     </section>
   </main>
-
+  
    <footer class="border-t border-slate-200 bg-white text-slate-700 transition-colors dark:border-slate-800 dark:bg-slate-950 dark:text-slate-300">
   <!-- Row 1: 5 Columns (Brand + Map | Quick Links | Popular Services | Connect | Subscribe) -->
   <div class="mx-auto grid max-w-7xl gap-8 px-4 py-12 sm:px-6 md:grid-cols-2 lg:grid-cols-5 lg:px-8">
