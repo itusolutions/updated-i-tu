@@ -79,3 +79,54 @@
     onReady();
   }
 })();
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   iTu Solutions - Scroll Reveal
+   Replays entrance animations when scrolling down and up.
+   ========================================================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+  const revealElements = document.querySelectorAll(".itu-reveal");
+
+  if (!revealElements.length) return;
+
+  if (
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  ) {
+    revealElements.forEach(element => {
+      element.classList.add("is-visible");
+    });
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+        } else {
+          entry.target.classList.remove("is-visible");
+        }
+      });
+    },
+    {
+      threshold: 0.15,
+      rootMargin: "0px 0px -40px 0px"
+    }
+  );
+
+  revealElements.forEach(element => {
+    observer.observe(element);
+  });
+});
+
