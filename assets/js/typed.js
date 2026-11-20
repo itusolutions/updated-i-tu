@@ -13,26 +13,16 @@
     );
   }
 
-  function isElementHidden(el) {
-    if (!el) return true;
+  function isElementVisible(el) {
+    if (!el || !el.isConnected) return false;
     const style = window.getComputedStyle(el);
-    if (style.display === "none" || style.visibility === "hidden") return true;
-    // Check ancestors for display: none
-    let parent = el.parentElement;
-    while (parent && parent !== document.body) {
-      const pStyle = window.getComputedStyle(parent);
-      if (pStyle.display === "none") return true;
-      parent = parent.parentElement;
-    }
-    return false;
+    if (style.display === "none" || style.visibility === "hidden") return false;
+    const rect = el.getBoundingClientRect();
+    return rect.width > 0 || el.offsetParent !== null;
   }
 
   function parseStrings(el) {
-    const raw =
-      el.getAttribute("data-typed-strings") ||
-      (el.closest("[data-typed-strings]") &&
-        el.closest("[data-typed-strings]").getAttribute("data-typed-strings"));
-
+    const raw = el.getAttribute("data-typed-strings");
     if (!raw) return DEFAULT_STRINGS.slice();
 
     try {
@@ -48,9 +38,16 @@
     return DEFAULT_STRINGS.slice();
   }
 
+  function destroyExistingTyped(el) {
+    if (el._typedInstance && typeof el._typedInstance.destroy === "function") {
+      el._typedInstance.destroy();
+      el._typedInstance = null;
+    }
+    el.dataset.typedInitialized = "false";
+  }
+
   function mountTyped(el) {
     if (!el || el.dataset.typedInitialized === "true") return;
-    if (isElementHidden(el)) return;
 
     const strings = parseStrings(el);
 
@@ -60,9 +57,16 @@
       return;
     }
 
+    if (!isElementVisible(el)) {
+      return;
+    }
+
     if (typeof window.Typed === "function") {
+      destroyExistingTyped(el);
       el.dataset.typedInitialized = "true";
-      new window.Typed(el, {
+      el.textContent = "";
+
+      el._typedInstance = new window.Typed(el, {
         strings: strings,
         typeSpeed: Number(el.getAttribute("data-type-speed")) || 45,
         backSpeed: Number(el.getAttribute("data-back-speed")) || 25,
@@ -78,41 +82,50 @@
 
   function collectTargets() {
     const targets = new Set();
-    // Support multiple [data-typed] elements (mobile, tablet, desktop)
-    document.querySelectorAll("[data-typed]").forEach((el) => targets.add(el));
-    // Fallback if only #hero-typed is used
-    if (targets.size === 0) {
-      document.querySelectorAll("#hero-typed").forEach((el) => targets.add(el));
-    }
+    document.querySelectorAll("#hero-typed, [data-typed]").forEach((el) => {
+      targets.add(el);
+    });
     return Array.from(targets);
   }
 
-  function initTyped(attempt) {
-    const tries = attempt || 0;
+  function initTyped() {
     const targets = collectTargets();
-
     targets.forEach(mountTyped);
+  }
 
-    // If Typed CDN script hasn't finished loading yet, retry briefly
-    if (typeof window.Typed !== "function" && tries < 25) {
-      window.setTimeout(function () {
-        initTyped(tries + 1);
-      }, 120);
+  // Re-check on resize/orientation change (mobile <-> tablet <-> desktop)
+  let resizeTimer = null;
+  window.addEventListener("resize", function () {
+    window.clearTimeout(resizeTimer);
+    resizeTimer = window.setTimeout(function () {
+      collectTargets().forEach((el) => {
+        if (el.dataset.typedInitialized !== "true") {
+          mountTyped(el);
+        }
+      });
+    }, 150);
+  });
+
+  // Retry briefly if Typed.js CDN finishes loading after this script
+  let attempts = 0;
+  const retryInterval = window.setInterval(function () {
+    attempts += 1;
+    const unmounted = collectTargets().filter(
+      (el) => el.dataset.typedInitialized !== "true" && isElementVisible(el)
+    );
+    if (typeof window.Typed === "function" && unmounted.length > 0) {
+      unmounted.forEach(mountTyped);
     }
-  }
-
-  function refreshOnViewportChange() {
-    collectTargets().forEach(mountTyped);
-  }
+    if (attempts >= 20 || (typeof window.Typed === "function" && unmounted.length === 0)) {
+      window.clearInterval(retryInterval);
+    }
+  }, 250);
 
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", function () {
-      initTyped(0);
-    });
+    document.addEventListener("DOMContentLoaded", initTyped);
   } else {
-    initTyped(0);
+    initTyped();
   }
 
-  window.addEventListener("resize", refreshOnViewportChange, { passive: true });
-  window.addEventListener("orientationchange", refreshOnViewportChange, { passive: true });
+  window.addEventListener("load", initTyped);
 })();
