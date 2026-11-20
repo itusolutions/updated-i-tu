@@ -159,3 +159,58 @@
 }
 
 
+
+/* ==========================================================================
+   iTu Solutions - Parallax Styles
+   ========================================================================== */
+
+[data-itu-parallax] {
+  position: relative;
+  will-change: transform;
+  transition: transform 0.1s linear;
+}
+
+[data-parallax-mouse] {
+  transform: translate3d(
+    var(--parallax-mouse-x, 0),
+    var(--parallax-mouse-y, 0),
+    0
+  );
+}
+
+.itu-parallax-background {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  will-change: background-position;
+}
+
+@media (max-width: 767px) {
+  [data-itu-parallax] {
+    transition: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-itu-parallax],
+  [data-parallax-mouse],
+  .itu-parallax-background {
+    transform: none !important;
+    background-position: center !important;
+    transition: none !important;
+    will-change: auto !important;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
