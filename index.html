@@ -88,10 +88,10 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
 
-  <!-- Theme Color (synced dynamically with light/dark mode) -->
+<!-- Theme Color (synced dynamically with light/dark mode) -->
   <meta name="theme-color" content="#f8fafc" data-theme-color>
 
-  <!-- Immediate Pre-Paint Theme Guard -->
+  <!-- Immediate Pre-Paint Theme Guard (must remain inline in <head>) -->
   <script>
     (function () {
       var STORAGE_KEY = "itu-theme";
@@ -115,12 +115,13 @@
       }
     })();
   </script>
-  
-  <!-- Tailwind CSS & Local Stylesheets ( /src/ & /assets/css/) -->
+
+  <!-- Tailwind CSS v4 Browser Runtime & Theme Stylesheet -->
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <style type="text/tailwindcss">
     @import "https://itusolutions.github.io/updated-i-tu/assets/css/tailwind.css";
   </style>
+  
   <link rel="stylesheet" href="https://itusolutions.github.io/updated-i-tu/assets/css/animations.css">
   <link rel="stylesheet" href="https://itusolutions.github.io/updated-i-tu/assets/css/custom.css">
   <link rel="stylesheet" href="https://itusolutions.github.io/updated-i-tu/assets/css/print.css" media="print">
